@@ -13,9 +13,16 @@ struct BookCell: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
-            Image(systemName: "book")
-                .resizable()
-                .frame(width: 40, height: 50) //TODO: To be adjusted
+            AsyncImage(url: URL(string: book.imageUrl)) { image in
+                image
+                    .resizable()
+            } placeholder: {
+                Image(systemName: "book")
+                    .resizable()
+            }
+            .frame(width: 50, height: 50)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            
             Text(book.title)
         }
     }
