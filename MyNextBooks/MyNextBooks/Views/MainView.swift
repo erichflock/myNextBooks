@@ -15,7 +15,7 @@ struct MainView: View {
     
     var body: some View {
         TabView {
-            Text("Search Books")
+            SearchBooksView()
                 .tabItem({
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
                 })
