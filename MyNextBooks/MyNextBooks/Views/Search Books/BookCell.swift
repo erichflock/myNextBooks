@@ -13,7 +13,7 @@ struct BookCell: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
-            AsyncImage(url: URL(string: book.imageUrl)) { image in
+            AsyncImage(url: URL(string: book.imageUrl ?? "")) { image in
                 image
                     .resizable()
             } placeholder: {

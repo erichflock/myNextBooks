@@ -10,5 +10,5 @@ import Foundation
 struct Book: Identifiable {
     let id = UUID()
     var title: String
-    var imageUrl: String
+    var imageUrl: String?
 }
