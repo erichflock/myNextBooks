@@ -9,7 +9,12 @@ class BooksManager {
     
     var booksApi: BooksApiProtocol = BooksApi()
     
-    func getBooks() -> [Book] {
+    func getBooks(with terms: String) async -> [Book] {
+        do {
+            try await booksApi.getBooks(with: terms)
+        } catch {
+            
+        }
         return []
     }
     

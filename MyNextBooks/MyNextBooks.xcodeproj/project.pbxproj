@@ -13,11 +13,11 @@
 		36783BC828CCFF240058A3B4 /* MyNextBooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BC728CCFF240058A3B4 /* MyNextBooksApp.swift */; };
 		36783BCC28CCFF250058A3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36783BCB28CCFF250058A3B4 /* Assets.xcassets */; };
 		36783BCF28CCFF250058A3B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36783BCE28CCFF250058A3B4 /* Preview Assets.xcassets */; };
-		36783BD928CCFF250058A3B4 /* MyNextBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BD828CCFF250058A3B4 /* MyNextBooksTests.swift */; };
 		36783BE328CCFF250058A3B4 /* MyNextBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BE228CCFF250058A3B4 /* MyNextBooksUITests.swift */; };
 		36783BE528CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BE428CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift */; };
 		3683C41128DE061E0007CC6C /* BooksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41028DE061E0007CC6C /* BooksApi.swift */; };
 		3683C41428E188770007CC6C /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41328E188770007CC6C /* BooksManager.swift */; };
+		3683C41628E18C960007CC6C /* BooksManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41528E18C960007CC6C /* BooksManagerTests.swift */; };
 		36A34A0228D238DD004E6EF5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A34A0128D238DC004E6EF5 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,12 +47,12 @@
 		36783BCB28CCFF250058A3B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36783BCE28CCFF250058A3B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36783BD428CCFF250058A3B4 /* MyNextBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36783BD828CCFF250058A3B4 /* MyNextBooksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksTests.swift; sourceTree = "<group>"; };
 		36783BDE28CCFF250058A3B4 /* MyNextBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36783BE228CCFF250058A3B4 /* MyNextBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksUITests.swift; sourceTree = "<group>"; };
 		36783BE428CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3683C41028DE061E0007CC6C /* BooksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksApi.swift; sourceTree = "<group>"; };
 		3683C41328E188770007CC6C /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
+		3683C41528E18C960007CC6C /* BooksManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManagerTests.swift; sourceTree = "<group>"; };
 		36A34A0128D238DC004E6EF5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +143,7 @@
 		36783BD728CCFF250058A3B4 /* MyNextBooksTests */ = {
 			isa = PBXGroup;
 			children = (
-				36783BD828CCFF250058A3B4 /* MyNextBooksTests.swift */,
+				3683C41528E18C960007CC6C /* BooksManagerTests.swift */,
 			);
 			path = MyNextBooksTests;
 			sourceTree = "<group>";
@@ -253,6 +253,7 @@
 					};
 					36783BD328CCFF250058A3B4 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = 36783BC328CCFF240058A3B4;
 					};
 					36783BDD28CCFF250058A3B4 = {
@@ -326,7 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36783BD928CCFF250058A3B4 /* MyNextBooksTests.swift in Sources */,
+				3683C41628E18C960007CC6C /* BooksManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,15 +533,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SE47ZVXRT6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flock.MyNextBooksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNextBooks.app/MyNextBooks";
@@ -552,11 +560,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SE47ZVXRT6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flock.MyNextBooksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
