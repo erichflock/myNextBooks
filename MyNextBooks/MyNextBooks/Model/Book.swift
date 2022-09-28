@@ -12,4 +12,12 @@ struct Book: Identifiable {
     var title: String
     var authors: String
     var imageUrl: String?
+    
+    func getSecureImageUrl() -> String? {
+        guard let imageUrl = imageUrl,
+              imageUrl.contains("http://") else {
+            return imageUrl
+        }
+        return imageUrl.replacingOccurrences(of: "http", with: "https")
+    }
 }
