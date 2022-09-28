@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363FB22828E4A914003BDEF7 /* BookApiModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FB22728E4A914003BDEF7 /* BookApiModel+Fixture.swift */; };
 		367396B728D8C3CE00405BB9 /* SearchBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367396B628D8C3CE00405BB9 /* SearchBooksView.swift */; };
 		367396BA28D8C79B00405BB9 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367396B928D8C79A00405BB9 /* BookCell.swift */; };
 		367396BD28D8C86900405BB9 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367396BC28D8C86900405BB9 /* Book.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		363FB22728E4A914003BDEF7 /* BookApiModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookApiModel+Fixture.swift"; sourceTree = "<group>"; };
 		367396B628D8C3CE00405BB9 /* SearchBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksView.swift; sourceTree = "<group>"; };
 		367396B928D8C79A00405BB9 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		367396BC28D8C86900405BB9 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		363FB22628E4A901003BDEF7 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				363FB22728E4A914003BDEF7 /* BookApiModel+Fixture.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		367396B828D8C77900405BB9 /* Search Books */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		36783BD728CCFF250058A3B4 /* MyNextBooksTests */ = {
 			isa = PBXGroup;
 			children = (
+				363FB22628E4A901003BDEF7 /* Fixtures */,
 				3683C41528E18C960007CC6C /* BooksManagerTests.swift */,
 			);
 			path = MyNextBooksTests;
@@ -328,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3683C41628E18C960007CC6C /* BooksManagerTests.swift in Sources */,
+				363FB22828E4A914003BDEF7 /* BookApiModel+Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

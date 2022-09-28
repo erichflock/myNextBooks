@@ -33,6 +33,23 @@ class BooksManagerTests: XCTestCase {
         XCTAssertEqual(booksApiSpy.terms, expectedTerms)
     }
     
+    func test_getBooks_whenExecuted_shouldReturnExpectedBooks() async {
+        let expectedBooks: [Book] = [.init(title: "Harry Potter", authors: "J.K Rowling", imageUrl: "harrypotter.com"),
+                                     .init(title: "The Lord of the Rings", authors: "J.R.R. Tolkien, Tolkien", imageUrl: "lordoftherings.com")]
+        booksApiSpy.bookApiModel = .fixture(items: [.fixture(volumeInfo: .fixture(title: "Harry Potter", authors: ["J.K Rowling"], imageLinks: .fixture(smallThumbnail: "harrypotter.com"))),
+                                                    .fixture(volumeInfo: .fixture(title: "The Lord of the Rings", authors: ["J.R.R. Tolkien", "Tolkien"], imageLinks: .fixture(smallThumbnail: "lordoftherings.com")))])
+        
+        let returnedBooks = await sut.getBooks(with: "any terms")
+        
+        XCTAssertEqual(returnedBooks.count, 2)
+        XCTAssertEqual(returnedBooks.first?.title, expectedBooks.first?.title)
+        XCTAssertEqual(returnedBooks.first?.authors, expectedBooks.first?.authors)
+        XCTAssertEqual(returnedBooks.first?.imageUrl, expectedBooks.first?.imageUrl)
+        XCTAssertEqual(returnedBooks.last?.title, expectedBooks.last?.title)
+        XCTAssertEqual(returnedBooks.last?.authors, expectedBooks.last?.authors)
+        XCTAssertEqual(returnedBooks.last?.imageUrl, expectedBooks.last?.imageUrl)
+    }
+    
 }
 
 private class BooksApiSpy: BooksApiProtocol {

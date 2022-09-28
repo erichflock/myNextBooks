@@ -10,16 +10,27 @@ class BooksManager {
     var booksApi: BooksApiProtocol = BooksApi()
     
     func getBooks(with terms: String) async -> [Book] {
+        var books: [Book] = []
         do {
-            try await booksApi.getBooks(with: terms)
+            let apibooks = try await booksApi.getBooks(with: terms)
+            apibooks?.items?.forEach({ item in
+                if let book = map(bookApiModelItem: item) {
+                    books.append(book)
+                }
+            })
         } catch {
             
         }
-        return []
+        return books
     }
     
     private func map(bookApiModelItem: BookApiModel.Item) -> Book? {
-        return nil
+        guard let title = bookApiModelItem.volumeInfo?.title,
+              let authors = bookApiModelItem.volumeInfo?.authors?.joined(separator: ", "),
+              let imageURL = bookApiModelItem.volumeInfo?.imageLinks?.smallThumbnail else {
+            return nil
+        }
+        return .init(title: title, authors: authors, imageUrl: imageURL)
     }
     
 }

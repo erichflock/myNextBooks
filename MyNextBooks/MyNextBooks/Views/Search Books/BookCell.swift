@@ -30,6 +30,6 @@ struct BookCell: View {
 
 struct BookCell_Previews: PreviewProvider {
     static var previews: some View {
-        BookCell(book: .init(title: "Book Title", imageUrl: ""))
+        BookCell(book: .init(title: "Book Title", authors: "authors", imageUrl: ""))
     }
 }
