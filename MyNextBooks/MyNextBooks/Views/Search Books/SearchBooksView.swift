@@ -20,6 +20,11 @@ struct SearchBooksView: View {
                 }
             }
             .searchable(text: $searchText)
+            .onSubmit(of: .search) {
+                Task {
+                    books = await BooksManager().getBooks(with: searchText)
+                }
+            }
             .navigationTitle("Search Books")
         }
     }
