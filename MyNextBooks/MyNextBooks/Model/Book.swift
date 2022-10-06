@@ -22,4 +22,17 @@ struct Book: Identifiable {
         }
         return imageUrl.replacingOccurrences(of: "http", with: "https")
     }
+    
+    func getFormattedPublishedDate() -> String? {
+        guard let publishedDate = publishedDate else { return nil }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let desiredDateFormatter = DateFormatter()
+        desiredDateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        guard let dateFromString =  dateFormatter.date(from: publishedDate) else { return nil }
+        return desiredDateFormatter.string(from: dateFromString)
+    }
 }
