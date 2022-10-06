@@ -29,7 +29,7 @@ struct BookDetailsView: View {
                 Text(book.authors)
                     .font(.title3)
                     .foregroundColor(.secondary)
-                Text(book.publishedDate ?? "")
+                Text(book.getFormattedPublishedDate() ?? "")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 Text(book.description ?? "")
