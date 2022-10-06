@@ -12,23 +12,31 @@ struct BookDetailsView: View {
     let book: Book
     
     var body: some View {
-        VStack(alignment: .center, spacing: 8) {
-            AsyncImage(url: URL(string: book.getSecureImageUrl() ?? "")) { image in
-                image
-                    .resizable()
-            } placeholder: {
-                Image(systemName: "book")
-                    .resizable()
+        ScrollView {
+            VStack(alignment: .center, spacing: 8) {
+                AsyncImage(url: URL(string: book.getSecureImageUrl() ?? "")) { image in
+                    image
+                        .resizable()
+                } placeholder: {
+                    Image(systemName: "book")
+                        .resizable()
+                }
+                .frame(width: 128, height: 192)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+                Text(book.title)
+                    .font(.title2)
+                Text(book.authors)
+                    .font(.title3)
+                    .foregroundColor(.secondary)
+                Text(book.publishedDate ?? "")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                Text(book.description ?? "")
+                    .font(.body)
+                Spacer()
             }
-            .frame(width: 128, height: 192)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            
-            Text(book.title)
-                .font(.title2)
-            Text(book.authors)
-                .font(.title3)
-                .foregroundColor(.secondary)
-            Spacer()
+            .padding()
         }
     }
 }
