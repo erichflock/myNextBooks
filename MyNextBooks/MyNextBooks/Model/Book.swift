@@ -12,6 +12,8 @@ struct Book: Identifiable {
     var title: String
     var authors: String
     var imageUrl: String?
+    var publishedDate: String?
+    var description: String?
     
     func getSecureImageUrl() -> String? {
         guard let imageUrl = imageUrl,
