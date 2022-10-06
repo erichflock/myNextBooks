@@ -16,7 +16,9 @@ struct SearchBooksView: View {
         NavigationView {
             List {
                 ForEach(books) { book in
-                    BookCell(book: book)
+                    NavigationLink(destination: BookDetailsView(book: book)) {
+                        BookCell(book: book)
+                    }
                 }
             }
             .searchable(text: $searchText)
