@@ -26,6 +26,19 @@ struct SearchBooksView: View {
                 }
             }
             .navigationTitle("Search Books")
+            .overlay {
+                if books.isEmpty {
+                    VStack(alignment: .center, spacing: 10) {
+                        Image("noSearchResults")
+                            .resizable()
+                            .frame(width: 80, height: 80, alignment: .center)
+                        Text("No books found. \nPlease search again.")
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .offset(y: -50)
+                }
+            }
         }
     }
 }
