@@ -30,8 +30,8 @@ extension BookApiModel.Item.VolumeInfo {
     static func fixture(title: String? = "title",
                         authors: [String]? = [],
                         subtitle: String? = "subtitle",
-                        publishedDate: String? = "01.01.200",
-                        description: String? = "description",
+                        publishedDate: String? = nil,
+                        description: String? = nil,
                         imageLinks: ImageLinks? = nil) -> Self {
         .init(title: title, authors: authors, subtitle: subtitle, publishedDate: publishedDate, description: description, imageLinks: imageLinks)
     }

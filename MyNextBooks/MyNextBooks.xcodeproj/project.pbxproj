@@ -16,8 +16,6 @@
 		36783BC828CCFF240058A3B4 /* MyNextBooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BC728CCFF240058A3B4 /* MyNextBooksApp.swift */; };
 		36783BCC28CCFF250058A3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36783BCB28CCFF250058A3B4 /* Assets.xcassets */; };
 		36783BCF28CCFF250058A3B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36783BCE28CCFF250058A3B4 /* Preview Assets.xcassets */; };
-		36783BE328CCFF250058A3B4 /* MyNextBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BE228CCFF250058A3B4 /* MyNextBooksUITests.swift */; };
-		36783BE528CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BE428CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift */; };
 		3683C41128DE061E0007CC6C /* BooksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41028DE061E0007CC6C /* BooksApi.swift */; };
 		3683C41428E188770007CC6C /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41328E188770007CC6C /* BooksManager.swift */; };
 		3683C41628E18C960007CC6C /* BooksManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41528E18C960007CC6C /* BooksManagerTests.swift */; };
@@ -27,13 +25,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		36783BD528CCFF250058A3B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36783BBC28CCFF240058A3B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 36783BC328CCFF240058A3B4;
-			remoteInfo = MyNextBooks;
-		};
-		36783BDF28CCFF250058A3B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36783BBC28CCFF240058A3B4 /* Project object */;
 			proxyType = 1;
@@ -54,9 +45,6 @@
 		36783BCB28CCFF250058A3B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36783BCE28CCFF250058A3B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36783BD428CCFF250058A3B4 /* MyNextBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36783BDE28CCFF250058A3B4 /* MyNextBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36783BE228CCFF250058A3B4 /* MyNextBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksUITests.swift; sourceTree = "<group>"; };
-		36783BE428CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3683C41028DE061E0007CC6C /* BooksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksApi.swift; sourceTree = "<group>"; };
 		3683C41328E188770007CC6C /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
 		3683C41528E18C960007CC6C /* BooksManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManagerTests.swift; sourceTree = "<group>"; };
@@ -73,13 +61,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		36783BD128CCFF250058A3B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36783BDB28CCFF250058A3B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,7 +117,6 @@
 			children = (
 				36783BC628CCFF240058A3B4 /* MyNextBooks */,
 				36783BD728CCFF250058A3B4 /* MyNextBooksTests */,
-				36783BE128CCFF250058A3B4 /* MyNextBooksUITests */,
 				36783BC528CCFF240058A3B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,7 +126,6 @@
 			children = (
 				36783BC428CCFF240058A3B4 /* MyNextBooks.app */,
 				36783BD428CCFF250058A3B4 /* MyNextBooksTests.xctest */,
-				36783BDE28CCFF250058A3B4 /* MyNextBooksUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,15 +160,6 @@
 				3683C41528E18C960007CC6C /* BooksManagerTests.swift */,
 			);
 			path = MyNextBooksTests;
-			sourceTree = "<group>";
-		};
-		36783BE128CCFF250058A3B4 /* MyNextBooksUITests */ = {
-			isa = PBXGroup;
-			children = (
-				36783BE228CCFF250058A3B4 /* MyNextBooksUITests.swift */,
-				36783BE428CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift */,
-			);
-			path = MyNextBooksUITests;
 			sourceTree = "<group>";
 		};
 		3683C40F28DE060A0007CC6C /* Network */ = {
@@ -264,24 +234,6 @@
 			productReference = 36783BD428CCFF250058A3B4 /* MyNextBooksTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		36783BDD28CCFF250058A3B4 /* MyNextBooksUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 36783BEE28CCFF250058A3B4 /* Build configuration list for PBXNativeTarget "MyNextBooksUITests" */;
-			buildPhases = (
-				36783BDA28CCFF250058A3B4 /* Sources */,
-				36783BDB28CCFF250058A3B4 /* Frameworks */,
-				36783BDC28CCFF250058A3B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				36783BE028CCFF250058A3B4 /* PBXTargetDependency */,
-			);
-			name = MyNextBooksUITests;
-			productName = MyNextBooksUITests;
-			productReference = 36783BDE28CCFF250058A3B4 /* MyNextBooksUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -298,10 +250,6 @@
 					36783BD328CCFF250058A3B4 = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
-						TestTargetID = 36783BC328CCFF240058A3B4;
-					};
-					36783BDD28CCFF250058A3B4 = {
-						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 36783BC328CCFF240058A3B4;
 					};
 				};
@@ -321,7 +269,6 @@
 			targets = (
 				36783BC328CCFF240058A3B4 /* MyNextBooks */,
 				36783BD328CCFF250058A3B4 /* MyNextBooksTests */,
-				36783BDD28CCFF250058A3B4 /* MyNextBooksUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -337,13 +284,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		36783BD228CCFF250058A3B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36783BDC28CCFF250058A3B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,15 +319,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36783BDA28CCFF250058A3B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36783BE528CCFF250058A3B4 /* MyNextBooksUITestsLaunchTests.swift in Sources */,
-				36783BE328CCFF250058A3B4 /* MyNextBooksUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -395,11 +326,6 @@
 			isa = PBXTargetDependency;
 			target = 36783BC328CCFF240058A3B4 /* MyNextBooks */;
 			targetProxy = 36783BD528CCFF250058A3B4 /* PBXContainerItemProxy */;
-		};
-		36783BE028CCFF250058A3B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 36783BC328CCFF240058A3B4 /* MyNextBooks */;
-			targetProxy = 36783BDF28CCFF250058A3B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -629,42 +555,6 @@
 			};
 			name = Release;
 		};
-		36783BEF28CCFF250058A3B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SE47ZVXRT6;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = flock.MyNextBooksUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyNextBooks;
-			};
-			name = Debug;
-		};
-		36783BF028CCFF250058A3B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SE47ZVXRT6;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = flock.MyNextBooksUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyNextBooks;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -691,15 +581,6 @@
 			buildConfigurations = (
 				36783BEC28CCFF250058A3B4 /* Debug */,
 				36783BED28CCFF250058A3B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		36783BEE28CCFF250058A3B4 /* Build configuration list for PBXNativeTarget "MyNextBooksUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				36783BEF28CCFF250058A3B4 /* Debug */,
-				36783BF028CCFF250058A3B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
