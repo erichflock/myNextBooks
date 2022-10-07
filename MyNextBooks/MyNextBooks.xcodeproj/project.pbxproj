@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361A0B5D28F06EF8000E266D /* ReadingListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361A0B5C28F06EF8000E266D /* ReadingListManager.swift */; };
+		361A0B6028F0708A000E266D /* ReadingListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361A0B5F28F0708A000E266D /* ReadingListManagerTests.swift */; };
 		363FB22828E4A914003BDEF7 /* BookApiModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FB22728E4A914003BDEF7 /* BookApiModel+Fixture.swift */; };
 		363FB22B28E4B565003BDEF7 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FB22A28E4B565003BDEF7 /* BookTests.swift */; };
 		363FB22E28E4B656003BDEF7 /* Book+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FB22D28E4B656003BDEF7 /* Book+Fixture.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		361A0B5C28F06EF8000E266D /* ReadingListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListManager.swift; sourceTree = "<group>"; };
+		361A0B5F28F0708A000E266D /* ReadingListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListManagerTests.swift; sourceTree = "<group>"; };
 		363FB22728E4A914003BDEF7 /* BookApiModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookApiModel+Fixture.swift"; sourceTree = "<group>"; };
 		363FB22A28E4B565003BDEF7 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		363FB22D28E4B656003BDEF7 /* Book+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Fixture.swift"; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		361A0B5E28F0706F000E266D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				361A0B5F28F0708A000E266D /* ReadingListManagerTests.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		363FB22628E4A901003BDEF7 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 		36783BD728CCFF250058A3B4 /* MyNextBooksTests */ = {
 			isa = PBXGroup;
 			children = (
+				361A0B5E28F0706F000E266D /* Manager */,
 				363FB22928E4B553003BDEF7 /* Model */,
 				363FB22628E4A901003BDEF7 /* Fixtures */,
 				3683C41528E18C960007CC6C /* BooksManagerTests.swift */,
@@ -174,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				3683C41328E188770007CC6C /* BooksManager.swift */,
+				361A0B5C28F06EF8000E266D /* ReadingListManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -305,6 +319,7 @@
 				367396BD28D8C86900405BB9 /* Book.swift in Sources */,
 				36783BC828CCFF240058A3B4 /* MyNextBooksApp.swift in Sources */,
 				3683C41428E188770007CC6C /* BooksManager.swift in Sources */,
+				361A0B5D28F06EF8000E266D /* ReadingListManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +330,7 @@
 				3683C41628E18C960007CC6C /* BooksManagerTests.swift in Sources */,
 				363FB22828E4A914003BDEF7 /* BookApiModel+Fixture.swift in Sources */,
 				363FB22E28E4B656003BDEF7 /* Book+Fixture.swift in Sources */,
+				361A0B6028F0708A000E266D /* ReadingListManagerTests.swift in Sources */,
 				363FB22B28E4B565003BDEF7 /* BookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
