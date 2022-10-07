@@ -10,6 +10,7 @@ import SwiftUI
 struct BookDetailsView: View {
     
     let book: Book
+    @State var isSelected = false
     
     var body: some View {
         ScrollView {
@@ -26,12 +27,27 @@ struct BookDetailsView: View {
                 
                 Text(book.title)
                     .font(.title2)
-                Text(book.authors)
-                    .font(.title3)
-                    .foregroundColor(.secondary)
-                Text(book.getFormattedPublishedDate() ?? "")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                HStack(alignment: .center) {
+                    Spacer()
+                    VStack {
+                        Text(book.authors)
+                            .font(.title3)
+                            .foregroundColor(.secondary)
+                        Text(book.getFormattedPublishedDate() ?? "")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                    Button {
+                        isSelected.toggle()
+                    } label: {
+                        Image(systemName: isSelected ? "heart.fill" : "heart")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.init("wine"))
+                            .padding(.trailing, 10)
+                    }
+                }
                 Text(book.description ?? "")
                     .font(.body)
                 Spacer()
