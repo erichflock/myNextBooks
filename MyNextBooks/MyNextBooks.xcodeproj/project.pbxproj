@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		361A0B5D28F06EF8000E266D /* ReadingListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361A0B5C28F06EF8000E266D /* ReadingListManager.swift */; };
 		361A0B6028F0708A000E266D /* ReadingListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361A0B5F28F0708A000E266D /* ReadingListManagerTests.swift */; };
+		361A0B6328F08135000E266D /* ReadingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361A0B6228F08135000E266D /* ReadingListView.swift */; };
 		363FB22828E4A914003BDEF7 /* BookApiModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FB22728E4A914003BDEF7 /* BookApiModel+Fixture.swift */; };
 		363FB22B28E4B565003BDEF7 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FB22A28E4B565003BDEF7 /* BookTests.swift */; };
 		363FB22E28E4B656003BDEF7 /* Book+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FB22D28E4B656003BDEF7 /* Book+Fixture.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		361A0B5C28F06EF8000E266D /* ReadingListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListManager.swift; sourceTree = "<group>"; };
 		361A0B5F28F0708A000E266D /* ReadingListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListManagerTests.swift; sourceTree = "<group>"; };
+		361A0B6228F08135000E266D /* ReadingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListView.swift; sourceTree = "<group>"; };
 		363FB22728E4A914003BDEF7 /* BookApiModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookApiModel+Fixture.swift"; sourceTree = "<group>"; };
 		363FB22A28E4B565003BDEF7 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		363FB22D28E4B656003BDEF7 /* Book+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Fixture.swift"; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 				361A0B5F28F0708A000E266D /* ReadingListManagerTests.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		361A0B6128F0811E000E266D /* Reading List */ = {
+			isa = PBXGroup;
+			children = (
+				361A0B6228F08135000E266D /* ReadingListView.swift */,
+			);
+			path = "Reading List";
 			sourceTree = "<group>";
 		};
 		363FB22628E4A901003BDEF7 /* Fixtures */ = {
@@ -195,6 +205,7 @@
 		36A34A0028D237A2004E6EF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				361A0B6128F0811E000E266D /* Reading List */,
 				36C61D9228EF322600802511 /* Book Details */,
 				367396B828D8C77900405BB9 /* Search Books */,
 				36A34A0128D238DC004E6EF5 /* MainView.swift */,
@@ -318,6 +329,7 @@
 				36C61D9428EF323D00802511 /* BookDetailsView.swift in Sources */,
 				367396BD28D8C86900405BB9 /* Book.swift in Sources */,
 				36783BC828CCFF240058A3B4 /* MyNextBooksApp.swift in Sources */,
+				361A0B6328F08135000E266D /* ReadingListView.swift in Sources */,
 				3683C41428E188770007CC6C /* BooksManager.swift in Sources */,
 				361A0B5D28F06EF8000E266D /* ReadingListManager.swift in Sources */,
 			);
