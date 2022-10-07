@@ -29,6 +29,16 @@ class ReadingListManagerTests: XCTestCase {
         XCTAssertTrue(sut.readingList.contains(book))
     }
     
+    func test_addBook_whenBookAlreadyAdded_shouldNotAddBookToReadlingList() {
+        let book: Book = .fixture()
+        sut.readingList.append(book)
+        XCTAssertEqual(sut.readingList.filter({ $0 == book }).count, 1, "precondition")
+        
+        sut.add(book: book)
+        
+        XCTAssertEqual(sut.readingList.filter({ $0 == book }).count, 1)
+    }
+    
     func test_removeBook_whenBookRemoved_shouldRemoveBookFromReadlingList() {
         let book: Book = .fixture()
         sut.readingList.append(book)
@@ -47,6 +57,7 @@ private class ReadingListManagerSpy: ReadingListManagerProtocol {
     var readingList: [Book] = []
     
     func add(book: Book) {
+        guard !readingList.contains(book) else { return }
         readingList.append(book)
     }
     

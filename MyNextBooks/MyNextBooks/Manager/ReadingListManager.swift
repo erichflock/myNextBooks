@@ -21,6 +21,7 @@ class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
     @Published var readingList: [Book] = []
     
     func add(book: Book) {
+        guard !readingList.contains(book) else { return }
         readingList.append(book)
     }
     
