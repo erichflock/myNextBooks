@@ -10,7 +10,7 @@ import SwiftUI
 struct BookDetailsView: View {
     
     let book: Book
-    @State var isSelected = false
+    @ObservedObject var readingManager = ReadingListManager.shared
     
     var body: some View {
         ScrollView {
@@ -39,9 +39,9 @@ struct BookDetailsView: View {
                     }
                     Spacer()
                     Button {
-                        isSelected.toggle()
+                        readingManager.readingList.contains(book) ? readingManager.remove(book: book) : readingManager.add(book: book)
                     } label: {
-                        Image(systemName: isSelected ? "heart.fill" : "heart")
+                        Image(systemName: readingManager.readingList.contains(book) ? "heart.fill" : "heart")
                             .resizable()
                             .frame(width: 24, height: 24)
                             .foregroundColor(.init("wine"))
