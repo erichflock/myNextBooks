@@ -20,7 +20,7 @@ struct MainView: View {
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
                 })
             
-            Text("Reading List")
+            ReadingListView()
                 .tabItem({
                     Label("Reading List", systemImage: "books.vertical.circle.fill")
                 })
