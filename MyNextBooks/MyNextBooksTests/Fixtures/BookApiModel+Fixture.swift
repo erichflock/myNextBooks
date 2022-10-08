@@ -6,6 +6,7 @@
 //
 
 @testable import MyNextBooks
+import Foundation
 
 extension BookApiModel {
     
@@ -18,7 +19,7 @@ extension BookApiModel {
 
 extension BookApiModel.Item {
     
-    static func fixture(id: String? = "id",
+    static func fixture(id: String? = UUID().uuidString,
                         volumeInfo: VolumeInfo?) -> Self {
         .init(id: id, volumeInfo: volumeInfo)
     }

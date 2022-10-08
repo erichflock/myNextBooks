@@ -15,10 +15,19 @@ protocol ReadingListManagerProtocol {
 
 class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
     
-    private init() {}
-    static var shared = ReadingListManager()
+    private init() {
+        loadSavedReadingList()
+    }
     
-    @Published var readingList: [Book] = []
+    static var shared = ReadingListManager()
+    private let defaults = UserDefaults.standard
+    private let readingListKey = "savedReadingList"
+    
+    @Published var readingList: [Book] = [] {
+        didSet {
+            saveReadingList()
+        }
+    }
     
     func add(book: Book) {
         guard !readingList.contains(book) else { return }
@@ -28,6 +37,26 @@ class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
     func remove(book: Book) {
         if let index = readingList.firstIndex(where: { $0 == book }) {
             readingList.remove(at: index)
+        }
+    }
+    
+    private func loadSavedReadingList() {
+        do {
+            if let data = UserDefaults.standard.data(forKey: readingListKey) {
+                let savedReadingList = try JSONDecoder().decode([Book].self, from: data)
+                readingList = savedReadingList
+            }
+        } catch let error {
+            print("Error decoding: \(error)")
+        }
+    }
+    
+    private func saveReadingList() {
+        do {
+            let data = try JSONEncoder().encode(readingList)
+            UserDefaults.standard.set(data, forKey: readingListKey)
+        } catch let error {
+            print("Error encoding: \(error)")
         }
     }
     

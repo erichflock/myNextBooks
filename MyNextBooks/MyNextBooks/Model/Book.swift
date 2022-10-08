@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Book: Identifiable, Equatable {
-    let id = UUID()
+struct Book: Identifiable, Equatable, Codable {
+    let id: String
     var title: String
     var authors: String
     var imageUrl: String?

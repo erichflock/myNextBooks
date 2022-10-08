@@ -34,19 +34,21 @@ class BooksManagerTests: XCTestCase {
     }
     
     func test_getBooks_whenExecuted_shouldReturnExpectedBooks() async {
-        let expectedBooks: [Book] = [.init(title: "Harry Potter", authors: "J.K Rowling", imageUrl: "harrypotter.com", publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers."),
-                                     .init(title: "The Lord of the Rings", authors: "J.R.R. Tolkien, Tolkien", imageUrl: "lordoftherings.com")]
-        booksApiSpy.bookApiModel = .fixture(items: [.fixture(volumeInfo: .fixture(title: "Harry Potter", authors: ["J.K Rowling"], publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers.", imageLinks: .fixture(smallThumbnail: "harrypotter.com"))),
-                                                    .fixture(volumeInfo: .fixture(title: "The Lord of the Rings", authors: ["J.R.R. Tolkien", "Tolkien"], imageLinks: .fixture(smallThumbnail: "lordoftherings.com")))])
+        let expectedBooks: [Book] = [.fixture(id: "firstBookID", title: "Harry Potter", authors: "J.K Rowling", imageUrl: "harrypotter.com", publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers."),
+                                     .fixture(id: "secondBookID", title: "The Lord of the Rings", authors: "J.R.R. Tolkien, Tolkien", imageUrl: "lordoftherings.com")]
+        booksApiSpy.bookApiModel = .fixture(items: [.fixture(id: "firstBookID", volumeInfo: .fixture(title: "Harry Potter", authors: ["J.K Rowling"], publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers.", imageLinks: .fixture(smallThumbnail: "harrypotter.com"))),
+                                                    .fixture(id: "secondBookID", volumeInfo: .fixture(title: "The Lord of the Rings", authors: ["J.R.R. Tolkien", "Tolkien"], imageLinks: .fixture(smallThumbnail: "lordoftherings.com")))])
         
         let returnedBooks = await sut.getBooks(with: "any terms")
         
         XCTAssertEqual(returnedBooks.count, 2)
+        XCTAssertEqual(returnedBooks.first?.id, expectedBooks.first?.id)
         XCTAssertEqual(returnedBooks.first?.title, expectedBooks.first?.title)
         XCTAssertEqual(returnedBooks.first?.authors, expectedBooks.first?.authors)
         XCTAssertEqual(returnedBooks.first?.publishedDate, expectedBooks.first?.publishedDate)
         XCTAssertEqual(returnedBooks.first?.description, expectedBooks.first?.description)
         XCTAssertEqual(returnedBooks.first?.imageUrl, expectedBooks.first?.imageUrl)
+        XCTAssertEqual(returnedBooks.last?.id, expectedBooks.last?.id)
         XCTAssertEqual(returnedBooks.last?.title, expectedBooks.last?.title)
         XCTAssertEqual(returnedBooks.last?.authors, expectedBooks.last?.authors)
         XCTAssertEqual(returnedBooks.last?.imageUrl, expectedBooks.last?.imageUrl)

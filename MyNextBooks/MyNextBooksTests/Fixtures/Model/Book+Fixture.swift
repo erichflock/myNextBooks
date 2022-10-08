@@ -6,15 +6,17 @@
 //
 
 @testable import MyNextBooks
+import Foundation
 
 extension Book {
     
-    static func fixture(title: String = "title",
+    static func fixture(id: String = UUID().uuidString,
+                        title: String = "title",
                         authors: String = "authors",
                         imageUrl: String? = "http://imageurl.com",
                         publishedDate: String? = nil,
                         description: String? = nil) -> Self {
-        .init(title: title, authors: authors, imageUrl: imageUrl, publishedDate: publishedDate, description: description)
+        .init(id: id, title: title, authors: authors, imageUrl: imageUrl, publishedDate: publishedDate, description: description)
     }
     
 }

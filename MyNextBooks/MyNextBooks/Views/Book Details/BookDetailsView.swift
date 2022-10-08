@@ -59,6 +59,6 @@ struct BookDetailsView: View {
 
 struct BookDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailsView(book: .init(title: "", authors: ""))
+        BookDetailsView(book: .init(id: "id", title: "", authors: ""))
     }
 }

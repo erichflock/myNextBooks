@@ -25,7 +25,8 @@ class BooksManager {
     }
     
     private func map(bookApiModelItem: BookApiModel.Item) -> Book? {
-        guard let title = bookApiModelItem.volumeInfo?.title,
+        guard let id = bookApiModelItem.id,
+              let title = bookApiModelItem.volumeInfo?.title,
               let authors = bookApiModelItem.volumeInfo?.authors?.joined(separator: ", ")
         else {
             return nil
@@ -33,7 +34,7 @@ class BooksManager {
         let publishedDate = bookApiModelItem.volumeInfo?.publishedDate
         let description = bookApiModelItem.volumeInfo?.description
         let imageURL = bookApiModelItem.volumeInfo?.imageLinks?.smallThumbnail
-        return .init(title: title, authors: authors, imageUrl: imageURL, publishedDate: publishedDate, description: description)
+        return .init(id: id, title: title, authors: authors, imageUrl: imageURL, publishedDate: publishedDate, description: description)
     }
     
 }
