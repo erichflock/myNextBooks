@@ -24,14 +24,14 @@ struct ReadingListView: View {
             .overlay {
                 if readingManager.readingList.isEmpty {
                     VStack(alignment: .center, spacing: 10) {
-                        Image("noSearchResults")
+                        Image("bookShelf")
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .center)
                         Text("No books. \nPlease add books to your list.")
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }
-                    .offset(y: -50)
+                    .offset(y: -30)
                 }
             }
         }
