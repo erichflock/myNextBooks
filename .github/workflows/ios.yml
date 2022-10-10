@@ -8,11 +8,11 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme
+    name: Build and Test
     runs-on: macos-latest
 
     steps:
       - name: Build
-        run: xcodebuild -project myNextBooks/MyNextBooks/MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5' | xcpretty && exit ${PIPESTATUS[0]}
+        run: xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5' | xcpretty && exit ${PIPESTATUS[0]}
       - name: Test
-        run: xcodebuild test -project myNextBooks/MyNextBooks/MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5' | xcpretty && exit ${PIPESTATUS[0]}
+        run: xcodebuild test -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5' | xcpretty && exit ${PIPESTATUS[0]}
