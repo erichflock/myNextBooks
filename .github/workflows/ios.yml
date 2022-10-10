@@ -12,6 +12,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - uses: actions/checkout@v1
       - name: Build
         run: xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5' | xcpretty && exit ${PIPESTATUS[0]}
       - name: Test
