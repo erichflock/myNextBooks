@@ -18,11 +18,13 @@ struct MainView: View {
             SearchBooksView()
                 .tabItem({
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
+                        .accessibilityIdentifier("tabBar_searchBooks")
                 })
             
             ReadingListView()
                 .tabItem({
                     Label("Reading List", systemImage: "books.vertical.circle.fill")
+                        .accessibilityIdentifier("tabBar_readingList")
                 })
         }
         .tint(.black)
