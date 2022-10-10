@@ -13,11 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build
+        env:
+          scheme: ${{ 'default' }}
+          platform: ${{ 'iOS Simulator' }}
         run: |
-          ls -l
           cd MyNextBooks
-          ls -l
-          xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest'
+          device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
+          xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=$platform,name=$device'
       - name: Test
         run: 
           cd myNextBooks/MyNextBooks
