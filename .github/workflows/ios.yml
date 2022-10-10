@@ -17,7 +17,7 @@ jobs:
           ls -l
           cd MyNextBooks
           ls -l
-          xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5'
+          xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest'
       - name: Test
         run: 
           cd myNextBooks/MyNextBooks
