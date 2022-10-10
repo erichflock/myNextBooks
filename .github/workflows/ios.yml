@@ -15,7 +15,7 @@ jobs:
       - name: Build
         run:
           cd myNextBooks/MyNextBooks
-          xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5' | xcpretty
+          xcodebuild -project MyNextBooks.xcodeproj    -scheme MyNextBooks    -sdk iphonesimulator    -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.5'
       - name: Test
         run: 
           cd myNextBooks/MyNextBooks
