@@ -17,7 +17,7 @@ struct MainView: View {
         TabView {
             SearchBooksView()
                 .tabItem({
-                    Label("Search", systemImage: "magnifyingglass.circle.fill")
+                    Label("Search Books", systemImage: "magnifyingglass.circle.fill")
                 })
             
             ReadingListView()
