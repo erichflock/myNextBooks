@@ -41,7 +41,7 @@ extension XCUIApplication {
         if element.waitForExistence(timeout: 60) {
             element.tap()
         } else {
-            XCTFail("Fail to tap text")
+            XCTFail("Fail to tap \(text)")
         }
     }
     
@@ -62,7 +62,7 @@ extension XCUIApplication {
         if keyboardSearchButton.waitForExistence(timeout: 60) {
             keyboardSearchButton.forceTap()
         } else {
-            XCTFail("Fail to tap keyboard search button")
+            XCTFail("Fail to tap keyboard search button for term \(term)")
         }
     }
     
