@@ -10,6 +10,9 @@ import SwiftUI
 struct MainView: View {
     
     init() {
+        if CommandLine.arguments.contains("UITestMode") {
+            ReadingListManager.shared.readingList.removeAll()
+        }
         UITabBar.appearance().backgroundColor = .secondarySystemFill
     }
     
