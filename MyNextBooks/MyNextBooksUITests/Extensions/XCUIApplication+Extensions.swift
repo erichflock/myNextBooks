@@ -60,7 +60,7 @@ extension XCUIApplication {
         
         let keyboardSearchButton = keyboards.buttons["Search"].firstMatch
         if keyboardSearchButton.waitForExistence(timeout: 60) {
-            keyboardSearchButton.tap()
+            keyboardSearchButton.forceTap()
         } else {
             XCTFail("Fail to tap keyboard search button")
         }
