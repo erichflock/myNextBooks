@@ -1,0 +1,22 @@
+name: UI Tests workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Run UI Tests using any available iPhone simulator
+    runs-on: macos-latest
+
+    steps:
+      - name: UI Tests
+        env:
+          platform: ${{ 'iOS Simulator' }}
+          scheme: ${{ 'MyNextBooksUITests' }}
+        run: |
+           cd MyNextBooks
+           device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
+           xcodebuild test -scheme "$scheme" -destination "platform=$platform,name=$device" | xcpretty && exit ${PIPESTATUS[0]}
