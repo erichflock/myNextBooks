@@ -60,10 +60,12 @@ extension XCUIApplication {
         
         let keyboardSearchButton = keyboards.buttons["Search"].firstMatch
         if keyboardSearchButton.waitForExistence(timeout: 60) {
-            keyboardSearchButton.tap()
+            keyboardSearchButton.forceTap()
         } else {
             XCTFail("Fail to tap keyboard search button for term \(term)")
         }
+        
+        dismissKeyboardIfPresent()
     }
     
     func tapOnTextOnNavigationBar(_ staticText: String) {
@@ -72,6 +74,13 @@ extension XCUIApplication {
             element.tap()
         } else {
             XCTFail("Fail to tap on \(staticText)")
+        }
+    }
+    
+    private func dismissKeyboardIfPresent() {
+        let firstKey = keys.element(boundBy: 0)
+        if firstKey.exists {
+           typeText("\n")
         }
     }
     
