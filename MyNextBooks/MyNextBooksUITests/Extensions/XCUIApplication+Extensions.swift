@@ -41,7 +41,7 @@ extension XCUIApplication {
         if element.waitForExistence(timeout: 60) {
             element.tap()
         } else {
-            XCTFail("Fail to tap \(text)")
+            XCTFail("Fail to tap \(text)", line: #line)
         }
     }
     
@@ -52,7 +52,7 @@ extension XCUIApplication {
     
     func search(_ term: String) {
         let searchbarTextField = searchFields["Search"].firstMatch
-        if searchbarTextField.waitForExistence(timeout: 10) {
+        if searchbarTextField.waitForExistence(timeout: 60) {
             searchbarTextField.clearAndEnterText(text: term)
         } else {
             XCTFail("Fail to tap search bar")
@@ -64,6 +64,8 @@ extension XCUIApplication {
         } else {
             XCTFail("Fail to tap keyboard search button for term \(term)")
         }
+        
+        dismissKeyboardIfPresent()
     }
     
     func tapOnTextOnNavigationBar(_ staticText: String) {
@@ -72,6 +74,13 @@ extension XCUIApplication {
             element.tap()
         } else {
             XCTFail("Fail to tap on \(staticText)")
+        }
+    }
+    
+    private func dismissKeyboardIfPresent() {
+        let firstKey = keys.element(boundBy: 0)
+        if firstKey.exists {
+           typeText("\n")
         }
     }
     
