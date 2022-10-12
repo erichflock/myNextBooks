@@ -47,6 +47,7 @@ struct BookDetailsView: View {
                             .foregroundColor(.init("wine"))
                             .padding(.trailing, 10)
                     }
+                    .accessibilityIdentifier("bookDetails_heartButton")
                 }
                 Text(book.description ?? "")
                     .font(.body)

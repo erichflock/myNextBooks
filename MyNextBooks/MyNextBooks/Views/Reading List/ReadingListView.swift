@@ -32,6 +32,7 @@ struct ReadingListView: View {
                             .multilineTextAlignment(.center)
                     }
                     .offset(y: -30)
+                    .accessibilityIdentifier("readingList_emptyStateView")
                 }
             }
         }
