@@ -52,7 +52,7 @@ extension XCUIApplication {
     
     func search(_ term: String) {
         let searchbarTextField = searchFields["Search"].firstMatch
-        if searchbarTextField.waitForExistence(timeout: 10) {
+        if searchbarTextField.waitForExistence(timeout: 60) {
             searchbarTextField.clearAndEnterText(text: term)
         } else {
             XCTFail("Fail to tap search bar")
@@ -60,7 +60,7 @@ extension XCUIApplication {
         
         let keyboardSearchButton = keyboards.buttons["Search"].firstMatch
         if keyboardSearchButton.waitForExistence(timeout: 60) {
-            keyboardSearchButton.forceTap()
+            keyboardSearchButton.tap()
         } else {
             XCTFail("Fail to tap keyboard search button for term \(term)")
         }
