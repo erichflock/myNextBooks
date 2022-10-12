@@ -41,7 +41,7 @@ extension XCUIApplication {
         if element.waitForExistence(timeout: 60) {
             element.tap()
         } else {
-            XCTFail("Fail to tap \(text)")
+            XCTFail("Fail to tap \(text)", line: #line)
         }
     }
     
