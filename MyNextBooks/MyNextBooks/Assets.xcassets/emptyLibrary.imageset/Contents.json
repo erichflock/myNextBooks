@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "nothing-found-80.png",
+      "filename" : "icons8-drawer-100.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "icons8-nothing-found-80.png",
+      "filename" : "icons8-drawer-100-2.png",
       "idiom" : "universal"
     }
   ],

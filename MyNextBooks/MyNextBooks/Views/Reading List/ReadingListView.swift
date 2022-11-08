@@ -24,7 +24,7 @@ struct ReadingListView: View {
             .overlay {
                 if readingManager.readingList.isEmpty {
                     VStack(alignment: .center, spacing: 10) {
-                        Image("bookShelf")
+                        Image("emptyLibrary")
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .center)
                         Text("No books. \nPlease add books to your list.")
