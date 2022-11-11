@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Run UI Tests using any available iPhone simulator
+    name: Run UI Tests
     runs-on: macos-latest
 
     steps:
@@ -20,5 +20,4 @@ jobs:
           scheme: ${{ 'MyNextBooksUITests' }}
         run: |
            cd MyNextBooks
-           device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-           xcodebuild test -scheme "$scheme" -destination "platform=$platform,name=$device"
+           xcodebuild test -scheme "$scheme" -destination "platform=iOS Simulator,name=iPhone 14 Pro,OS=16.1"
