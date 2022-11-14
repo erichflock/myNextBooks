@@ -22,6 +22,9 @@ struct SearchBooksView: View {
                 }
             }
             .searchable(text: $searchText)
+            .onChange(of: searchText) { _ in
+                books.removeAll()
+            }
             .onSubmit(of: .search) {
                 Task {
                     books = await BooksManager().getBooks(with: searchText)
