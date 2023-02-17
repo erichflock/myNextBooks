@@ -19,6 +19,7 @@ struct ReadingListView: View {
                         BookCell(book: book)
                     }
                 }
+                .onDelete(perform: readingManager.delete)
             }
             .navigationTitle("Reading List")
             .overlay {

@@ -40,6 +40,11 @@ class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
         }
     }
     
+    //Used on list delete action
+    func delete(at offsets: IndexSet) {
+        readingList.remove(atOffsets: offsets)
+    }
+    
     private func loadSavedReadingList() {
         do {
             if let data = UserDefaults.standard.data(forKey: readingListKey) {
