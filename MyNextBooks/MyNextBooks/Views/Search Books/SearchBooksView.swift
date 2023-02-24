@@ -9,30 +9,29 @@ import SwiftUI
 
 struct SearchBooksView: View {
     
-    @State private var searchText = ""
-    @State private var books: [Book] = []
+    @ObservedObject var viewModel = SearchBooksViewModel()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(books) { book in
+                ForEach(viewModel.books) { book in
                     NavigationLink(destination: BookDetailsView(book: book)) {
                         BookCell(book: book)
                     }
                 }
             }
-            .searchable(text: $searchText)
-            .onChange(of: searchText) { _ in
-                books.removeAll()
+            .searchable(text: $viewModel.searchText)
+            .onChange(of: viewModel.searchText) { _ in
+                viewModel.books.removeAll()
             }
             .onSubmit(of: .search) {
                 Task {
-                    books = await BooksManager().getBooks(with: searchText)
+                    viewModel.books = await BooksManager().getBooks(with: viewModel.searchText)
                 }
             }
             .navigationTitle("Search Books")
             .overlay {
-                if books.isEmpty {
+                if viewModel.books.isEmpty {
                     VStack(alignment: .center, spacing: 10) {
                         Image("noSearchResults")
                             .resizable()
