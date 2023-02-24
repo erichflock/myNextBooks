@@ -34,6 +34,28 @@ final class SearchBooksViewModelTests: XCTestCase {
         XCTAssertEqual(sut.books[1].id, "321")
     }
     
+    func test_removeBooks_whenExecuted_shouldRemoveAllBooks() async {
+        await addBooks()
+        XCTAssertFalse(sut.books.isEmpty, "precondition")
+        
+        sut.removeBooks()
+        
+        XCTAssertTrue(sut.books.isEmpty)
+    }
+    
+}
+
+//MARK: Helpers
+extension SearchBooksViewModelTests {
+    
+    private func addBooks() async {
+        let booksManager = BooksManagerFake()
+        booksManager.books = [.fixture(id: "123"),
+                              .fixture(id: "321")]
+        sut.booksManager = booksManager
+        await sut.searchBooks()
+    }
+    
 }
 
 private class BooksManagerFake: BooksManager {
