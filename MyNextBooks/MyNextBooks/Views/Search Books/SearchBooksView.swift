@@ -22,11 +22,11 @@ struct SearchBooksView: View {
             }
             .searchable(text: $viewModel.searchText)
             .onChange(of: viewModel.searchText) { _ in
-                viewModel.books.removeAll()
+                viewModel.removeBooks()
             }
             .onSubmit(of: .search) {
                 Task {
-                    viewModel.books = await BooksManager().getBooks(with: viewModel.searchText)
+                    await viewModel.searchBooks()
                 }
             }
             .navigationTitle("Search Books")
