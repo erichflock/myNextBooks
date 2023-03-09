@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBooksView: View {
     
     @ObservedObject var viewModel = SearchBooksViewModel()
+    @StateObject var network = Network()
     
     var body: some View {
         NavigationView {
@@ -31,18 +32,28 @@ struct SearchBooksView: View {
             }
             .navigationTitle("Search Books")
             .overlay {
-                if viewModel.books.isEmpty {
+                if !network.connected {
+                    VStack {
+                        Text("No intenert.\nPlease check your internet connection.")
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .offset(y: -50)
+                } else if viewModel.books.isEmpty {
                     VStack(alignment: .center, spacing: 10) {
                         Image("noSearchResults")
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .center)
-                        Text("No books found. \nPlease search again.")
+                        Text("No books found.\nPlease search again.")
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }
                     .offset(y: -50)
                 }
             }
+        }
+        .onAppear {
+            network.checkConnection()
         }
     }
 }

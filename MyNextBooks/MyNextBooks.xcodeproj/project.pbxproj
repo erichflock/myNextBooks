@@ -27,6 +27,7 @@
 		36A36C5128F5B86300AA9873 /* XCUIElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A36C5028F5B86300AA9873 /* XCUIElement+Extensions.swift */; };
 		36B607F029A9011200018DBE /* SearchBooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B607EF29A9011200018DBE /* SearchBooksViewModel.swift */; };
 		36B607F429A9087600018DBE /* SearchBooksViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B607F329A9087600018DBE /* SearchBooksViewModelTests.swift */; };
+		36B607F629A9172600018DBE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B607F529A9172600018DBE /* Network.swift */; };
 		36C61D9428EF323D00802511 /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C61D9328EF323D00802511 /* BookDetailsView.swift */; };
 		36EB50BB28F43E6000D1B42E /* MyNextBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB50BA28F43E6000D1B42E /* MyNextBooksUITests.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		36A36C5028F5B86300AA9873 /* XCUIElement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extensions.swift"; sourceTree = "<group>"; };
 		36B607EF29A9011200018DBE /* SearchBooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewModel.swift; sourceTree = "<group>"; };
 		36B607F329A9087600018DBE /* SearchBooksViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewModelTests.swift; sourceTree = "<group>"; };
+		36B607F529A9172600018DBE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		36C61D9328EF323D00802511 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
 		36EB50B828F43E6000D1B42E /* MyNextBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EB50BA28F43E6000D1B42E /* MyNextBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksUITests.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				3683C41028DE061E0007CC6C /* BooksApi.swift */,
+				36B607F529A9172600018DBE /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B607F629A9172600018DBE /* Network.swift in Sources */,
 				36B607F029A9011200018DBE /* SearchBooksViewModel.swift in Sources */,
 				367396BA28D8C79B00405BB9 /* BookCell.swift in Sources */,
 				36A34A0228D238DD004E6EF5 /* MainView.swift in Sources */,
