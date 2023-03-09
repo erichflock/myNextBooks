@@ -27,7 +27,7 @@ struct ReadingListView: View {
                     VStack(alignment: .center, spacing: 10) {
                         Image("emptyLibrary")
                             .resizable()
-                            .frame(width: 80, height: 80, alignment: .center)
+                            .frame(width: 60, height: 60, alignment: .center)
                         Text("No books. \nPlease add books to your list.")
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)

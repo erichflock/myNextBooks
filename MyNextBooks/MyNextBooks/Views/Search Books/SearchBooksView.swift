@@ -33,8 +33,10 @@ struct SearchBooksView: View {
             .navigationTitle("Search Books")
             .overlay {
                 if !network.connected {
-                    VStack {
-                        Text("No intenert.\nPlease check your internet connection.")
+                    VStack(alignment: .center, spacing: 10) {
+                        Image(systemName: "icloud.slash")
+                            .font(.system(size: 60))
+                        Text("No internet.\nPlease check your internet connection.")
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }
@@ -43,7 +45,7 @@ struct SearchBooksView: View {
                     VStack(alignment: .center, spacing: 10) {
                         Image("noSearchResults")
                             .resizable()
-                            .frame(width: 80, height: 80, alignment: .center)
+                            .frame(width: 60, height: 60, alignment: .center)
                         Text("No books found.\nPlease search again.")
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
