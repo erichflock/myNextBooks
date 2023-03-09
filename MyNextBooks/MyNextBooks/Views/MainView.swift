@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @Environment(\.colorScheme) var colorScheme
     
     init() {
         if CommandLine.arguments.contains("UITestMode") {
@@ -30,7 +31,7 @@ struct MainView: View {
                         .accessibilityIdentifier("tabBar_readingList")
                 })
         }
-        .tint(.black)
+        .tint(colorScheme == .light ? .black : .white)
     }
 }
 
