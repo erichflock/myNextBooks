@@ -158,7 +158,6 @@
 			children = (
 				367396B628D8C3CE00405BB9 /* SearchBooksView.swift */,
 				36B607EF29A9011200018DBE /* SearchBooksViewModel.swift */,
-				367396B928D8C79A00405BB9 /* BookCell.swift */,
 			);
 			path = "Search Books";
 			sourceTree = "<group>";
@@ -243,13 +242,22 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		369CF2FD29B9D4A100F4B7B4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				367396B928D8C79A00405BB9 /* BookCell.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		36A34A0028D237A2004E6EF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36A34A0128D238DC004E6EF5 /* MainView.swift */,
 				361A0B6128F0811E000E266D /* Reading List */,
 				36C61D9228EF322600802511 /* Book Details */,
 				367396B828D8C77900405BB9 /* Search Books */,
-				36A34A0128D238DC004E6EF5 /* MainView.swift */,
+				369CF2FD29B9D4A100F4B7B4 /* Shared */,
 			);
 			path = Views;
 			sourceTree = "<group>";
