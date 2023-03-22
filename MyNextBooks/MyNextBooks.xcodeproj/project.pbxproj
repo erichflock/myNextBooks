@@ -19,6 +19,8 @@
 		36783BC828CCFF240058A3B4 /* MyNextBooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36783BC728CCFF240058A3B4 /* MyNextBooksApp.swift */; };
 		36783BCC28CCFF250058A3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36783BCB28CCFF250058A3B4 /* Assets.xcassets */; };
 		36783BCF28CCFF250058A3B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36783BCE28CCFF250058A3B4 /* Preview Assets.xcassets */; };
+		3679B4E729CB12A40020BDEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3679B4E929CB12A40020BDEC /* Localizable.strings */; };
+		3679B4EC29CB12BE0020BDEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3679B4EE29CB12BE0020BDEC /* Localizable.strings */; };
 		3683C41128DE061E0007CC6C /* BooksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41028DE061E0007CC6C /* BooksApi.swift */; };
 		3683C41428E188770007CC6C /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41328E188770007CC6C /* BooksManager.swift */; };
 		3683C41628E18C960007CC6C /* BooksManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683C41528E18C960007CC6C /* BooksManagerTests.swift */; };
@@ -64,6 +66,8 @@
 		36783BCB28CCFF250058A3B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36783BCE28CCFF250058A3B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36783BD428CCFF250058A3B4 /* MyNextBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3679B4E829CB12A40020BDEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3679B4ED29CB12BE0020BDEC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3683C41028DE061E0007CC6C /* BooksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksApi.swift; sourceTree = "<group>"; };
 		3683C41328E188770007CC6C /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
 		3683C41528E18C960007CC6C /* BooksManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManagerTests.swift; sourceTree = "<group>"; };
@@ -198,7 +202,7 @@
 				367396BB28D8C85D00405BB9 /* Model */,
 				36783BC728CCFF240058A3B4 /* MyNextBooksApp.swift */,
 				36A34A0028D237A2004E6EF5 /* Views */,
-				36783BCB28CCFF250058A3B4 /* Assets.xcassets */,
+				3679B4E429CB0E110020BDEC /* Resources */,
 				36783BCD28CCFF250058A3B4 /* Preview Content */,
 			);
 			path = MyNextBooks;
@@ -222,6 +226,16 @@
 				3683C41528E18C960007CC6C /* BooksManagerTests.swift */,
 			);
 			path = MyNextBooksTests;
+			sourceTree = "<group>";
+		};
+		3679B4E429CB0E110020BDEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36783BCB28CCFF250058A3B4 /* Assets.xcassets */,
+				3679B4E929CB12A40020BDEC /* Localizable.strings */,
+				3679B4EE29CB12BE0020BDEC /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3683C40F28DE060A0007CC6C /* Network */ = {
@@ -381,7 +395,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				de,
 			);
 			mainGroup = 36783BBB28CCFF240058A3B4;
 			productRefGroup = 36783BC528CCFF240058A3B4 /* Products */;
@@ -401,6 +415,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36783BCF28CCFF250058A3B4 /* Preview Assets.xcassets in Resources */,
+				3679B4EC29CB12BE0020BDEC /* Localizable.strings in Resources */,
+				3679B4E729CB12A40020BDEC /* Localizable.strings in Resources */,
 				36783BCC28CCFF250058A3B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +494,25 @@
 			targetProxy = 36EB50BE28F43E6000D1B42E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3679B4E929CB12A40020BDEC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3679B4E829CB12A40020BDEC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3679B4EE29CB12BE0020BDEC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3679B4ED29CB12BE0020BDEC /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		36783BE628CCFF250058A3B4 /* Debug */ = {

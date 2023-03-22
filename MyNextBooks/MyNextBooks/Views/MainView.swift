@@ -21,7 +21,7 @@ struct MainView: View {
         TabView {
             SearchBooksView()
                 .tabItem({
-                    Label("Search", systemImage: "magnifyingglass.circle.fill")
+                    Label(NSLocalizedString("search", comment: ""), systemImage: "magnifyingglass.circle.fill")
                         .accessibilityIdentifier("tabBar_searchBooks")
                 })
             
