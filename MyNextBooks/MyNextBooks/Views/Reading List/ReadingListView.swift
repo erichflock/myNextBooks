@@ -21,14 +21,14 @@ struct ReadingListView: View {
                 }
                 .onDelete(perform: readingManager.delete)
             }
-            .navigationTitle("Reading List")
+            .navigationTitle(NSLocalizedString("readingList", comment: ""))
             .overlay {
                 if readingManager.readingList.isEmpty {
                     VStack(alignment: .center, spacing: 10) {
                         Image("emptyLibrary")
                             .resizable()
                             .frame(width: 60, height: 60, alignment: .center)
-                        Text("No books. \nPlease add books to your list.")
+                        Text(NSLocalizedString("noBooksMessage", comment: ""))
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }

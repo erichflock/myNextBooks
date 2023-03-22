@@ -5,4 +5,9 @@
   Created by Erich Flock on 22.03.23.
   
 */
-"search"="Search";
+"search" = "Search";
+"readingList" = "Reading List";
+"searchBooks" = "Search Books";
+"noBooksMessage" = "No books. \nPlease add books to your list.";
+"noInternetMessage" = "No internet.\nPlease check your internet connection.";
+"noSearchResultsMessage" = "No books found.\nPlease search again.";

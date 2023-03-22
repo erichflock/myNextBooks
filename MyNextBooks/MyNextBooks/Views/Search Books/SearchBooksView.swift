@@ -30,13 +30,13 @@ struct SearchBooksView: View {
                     await viewModel.searchBooks()
                 }
             }
-            .navigationTitle("Search Books")
+            .navigationTitle(NSLocalizedString("searchBooks", comment: ""))
             .overlay {
                 if !network.connected {
                     VStack(alignment: .center, spacing: 10) {
                         Image(systemName: "icloud.slash")
                             .font(.system(size: 60))
-                        Text("No internet.\nPlease check your internet connection.")
+                        Text(NSLocalizedString("noInternetMessage", comment: ""))
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }
@@ -46,7 +46,7 @@ struct SearchBooksView: View {
                         Image("noSearchResults")
                             .resizable()
                             .frame(width: 60, height: 60, alignment: .center)
-                        Text("No books found.\nPlease search again.")
+                        Text(NSLocalizedString("noSearchResultsMessage", comment: ""))
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }

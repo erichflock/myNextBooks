@@ -5,4 +5,9 @@
   Created by Erich Flock on 22.03.23.
   
 */
-"search"="Suche";
+"search" = "Suche";
+"readingList" = "Leseliste";
+"searchBooks" = "Bücher suchen";
+"noBooksMessage" = "Keine Bücher. \nBitte fügen Sie Bücher zu Ihrer Liste hinzu.";
+"noInternetMessage" = "Kein Internet.\nBitte überprüfen Sie Ihre Internetverbindung.";
+"noSearchResultsMessage" = "Keine Bücher gefunden.\nBitte erneut suchen.";

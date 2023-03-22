@@ -27,7 +27,7 @@ struct MainView: View {
             
             ReadingListView()
                 .tabItem({
-                    Label("Reading List", systemImage: "books.vertical.circle.fill")
+                    Label(NSLocalizedString("readingList", comment: ""), systemImage: "books.vertical.circle.fill")
                         .accessibilityIdentifier("tabBar_readingList")
                 })
         }
