@@ -20,4 +20,4 @@ jobs:
           scheme: ${{ 'MyNextBooksUITests' }}
         run: |
            cd MyNextBooks
-           xcodebuild test -scheme "$scheme" -destination "platform=iOS Simulator,name=iPhone 13 mini,OS=15.2"
+           xcodebuild test -scheme "$scheme" -destination "platform=iOS Simulator,name=iPhone 13 mini,OS=16.2"
