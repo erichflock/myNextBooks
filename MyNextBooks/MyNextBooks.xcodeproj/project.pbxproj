@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -81,6 +81,7 @@
 		36C61D9328EF323D00802511 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
 		36EB50B828F43E6000D1B42E /* MyNextBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EB50BA28F43E6000D1B42E /* MyNextBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksUITests.swift; sourceTree = "<group>"; };
+		B8A1E41D2AD00AD900C7145B /* MyNextBooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyNextBooks.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +199,7 @@
 		36783BC628CCFF240058A3B4 /* MyNextBooks */ = {
 			isa = PBXGroup;
 			children = (
+				B8A1E41D2AD00AD900C7145B /* MyNextBooks.entitlements */,
 				3679B4F129CB2AD30020BDEC /* Info.plist */,
 				3683C41228E1885A0007CC6C /* Manager */,
 				3683C40F28DE060A0007CC6C /* Network */,
@@ -391,7 +393,7 @@
 				};
 			};
 			buildConfigurationList = 36783BBF28CCFF240058A3B4 /* Build configuration list for PBXProject "MyNextBooks" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -629,6 +631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyNextBooks/MyNextBooks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyNextBooks/Preview Content\"";
@@ -660,6 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyNextBooks/MyNextBooks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyNextBooks/Preview Content\"";
