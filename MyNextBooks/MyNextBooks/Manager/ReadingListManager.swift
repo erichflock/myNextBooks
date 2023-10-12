@@ -42,7 +42,10 @@ class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
     
     //Used on list delete action
     func delete(at offsets: IndexSet) {
-        readingList.remove(atOffsets: offsets)
+        offsets.forEach { index in
+            let book = readingList.remove(at: index)
+            removeFromCloud(book: book)
+        }
     }
     
     private func loadSavedReadingList() {
