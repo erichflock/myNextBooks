@@ -36,3 +36,19 @@ struct Book: Identifiable, Equatable, Codable {
         return desiredDateFormatter.string(from: dateFromString)
     }
 }
+
+extension Book {
+    
+    struct CKKeys {
+        static let id = "id"
+        static let title = "title"
+        static let authors = "authors"
+        static let imageUrl = "imageUrl"
+        static let publishedDate = "publishedDate"
+        static let description = "description"
+    }
+    
+    struct CKRecordType {
+        static let value = "Book"
+    }
+}
