@@ -1,7 +1,7 @@
 # MyNextBooks
 Search and add books to your reading list.
 
-[![MyNextBooks](https://apps.apple.com/tr/app/mynextbooks/id6443747150)](https://apps.apple.com/tr/app/mynextbooks/id6443747150)
+![MyNextBooks Logo](./logo.png)
 
 ## About
 MyNextBooks is an app designed to help you search for and manage your reading list. Whether you're a casual reader or a book enthusiast, this tool will streamline your book discovery process and keep track of your future reads.
