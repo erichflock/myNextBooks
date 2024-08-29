@@ -1,4 +1,4 @@
-# MyNextBooks <img src="./logo.png" alt="MyNextBooks Logo" width="50" height="50">
+# MyNextBooks <img src="./logo.png" alt="MyNextBooks Logo" width="30" height="30">
 Search and add books to your reading list.
 
 ## About
