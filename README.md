@@ -1,7 +1,5 @@
-# MyNextBooks
+# MyNextBooks <img src="./logo.png" alt="MyNextBooks Logo" width="50" height="50">
 Search and add books to your reading list.
-
-<img src="./logo.png" alt="MyNextBooks Logo" width="50" height="50">
 
 ## About
 MyNextBooks is an app designed to help you search for and manage your reading list. Whether you're a casual reader or a book enthusiast, this tool will streamline your book discovery process and keep track of your future reads.
