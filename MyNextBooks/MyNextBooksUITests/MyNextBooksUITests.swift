@@ -25,11 +25,11 @@ class MyNextBooksUITests: XCTestCase {
     }
     
     func test_addBookToReadingList() {
-        app.tapOnTabBarItem("tabBar_readingList")
+        app.tapOnTabBarItem("Reading List")
         
         XCTAssertTrue(app.isVisible("readingList_emptyStateView"))
         
-        app.tapOnTabBarItem("tabBar_searchBooks")
+        app.tapOnTabBarItem("Search")
         
         app.search("the ministry for the future")
         
@@ -37,17 +37,17 @@ class MyNextBooksUITests: XCTestCase {
         
         app.tapOnButton("bookDetails_heartButton")
         
-        app.tapOnTabBarItem("tabBar_readingList")
+        app.tapOnTabBarItem("Reading List")
         
         app.tapOn(text: "The Ministry for the Future")
     }
     
     func test_removeBookFromReadingList() {
-        app.tapOnTabBarItem("tabBar_readingList")
+        app.tapOnTabBarItem("Reading List")
         
         XCTAssertTrue(app.isVisible("readingList_emptyStateView"))
         
-        app.tapOnTabBarItem("tabBar_searchBooks")
+        app.tapOnTabBarItem("Search")
         
         app.search("the ministry for the future")
         
@@ -55,7 +55,7 @@ class MyNextBooksUITests: XCTestCase {
         
         app.tapOnButton("bookDetails_heartButton")
         
-        app.tapOnTabBarItem("tabBar_readingList")
+        app.tapOnTabBarItem("Reading List")
         
         app.tapOn(text: "The Ministry for the Future")
         
