@@ -31,6 +31,7 @@
 		36B607F629A9172600018DBE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B607F529A9172600018DBE /* Network.swift */; };
 		36C61D9428EF323D00802511 /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C61D9328EF323D00802511 /* BookDetailsView.swift */; };
 		36EB50BB28F43E6000D1B42E /* MyNextBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB50BA28F43E6000D1B42E /* MyNextBooksUITests.swift */; };
+		B85784BB2C80C2690035F6FD /* Image+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85784BA2C80C2690035F6FD /* Image+Format.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		36C61D9328EF323D00802511 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
 		36EB50B828F43E6000D1B42E /* MyNextBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNextBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EB50BA28F43E6000D1B42E /* MyNextBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNextBooksUITests.swift; sourceTree = "<group>"; };
+		B85784BA2C80C2690035F6FD /* Image+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Format.swift"; sourceTree = "<group>"; };
 		B8A1E41D2AD00AD900C7145B /* MyNextBooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyNextBooks.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 		36783BC628CCFF240058A3B4 /* MyNextBooks */ = {
 			isa = PBXGroup;
 			children = (
+				B85784B92C80C24D0035F6FD /* Extensions */,
 				B8A1E41D2AD00AD900C7145B /* MyNextBooks.entitlements */,
 				3679B4F129CB2AD30020BDEC /* Info.plist */,
 				3683C41228E1885A0007CC6C /* Manager */,
@@ -310,6 +313,14 @@
 				36EB50BA28F43E6000D1B42E /* MyNextBooksUITests.swift */,
 			);
 			path = MyNextBooksUITests;
+			sourceTree = "<group>";
+		};
+		B85784B92C80C24D0035F6FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B85784BA2C80C2690035F6FD /* Image+Format.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +463,7 @@
 				367396B728D8C3CE00405BB9 /* SearchBooksView.swift in Sources */,
 				3683C41128DE061E0007CC6C /* BooksApi.swift in Sources */,
 				36C61D9428EF323D00802511 /* BookDetailsView.swift in Sources */,
+				B85784BB2C80C2690035F6FD /* Image+Format.swift in Sources */,
 				367396BD28D8C86900405BB9 /* Book.swift in Sources */,
 				36783BC828CCFF240058A3B4 /* MyNextBooksApp.swift in Sources */,
 				361A0B6328F08135000E266D /* ReadingListView.swift in Sources */,

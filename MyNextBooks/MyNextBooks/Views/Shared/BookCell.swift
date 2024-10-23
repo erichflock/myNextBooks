@@ -15,13 +15,12 @@ struct BookCell: View {
         HStack(alignment: .center, spacing: 8) {
             AsyncImage(url: URL(string: book.getSecureImageUrl() ?? "")) { image in
                 image
-                    .resizable()
+                    .formattedImage(width: 50, height: 75)
+                    
             } placeholder: {
                 Image(systemName: "book")
-                    .resizable()
+                    .formattedImage(width: 50, height: 75)
             }
-            .frame(width: 50, height: 50)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
             
             Text(book.title)
         }

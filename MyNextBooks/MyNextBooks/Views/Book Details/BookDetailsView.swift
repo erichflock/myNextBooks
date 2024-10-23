@@ -17,13 +17,11 @@ struct BookDetailsView: View {
             VStack(alignment: .center, spacing: 8) {
                 AsyncImage(url: URL(string: book.getSecureImageUrl() ?? "")) { image in
                     image
-                        .resizable()
+                        .formattedImage(width: 128, height: 192)
                 } placeholder: {
                     Image(systemName: "book")
-                        .resizable()
+                        .formattedImage(width: 128, height: 192)
                 }
-                .frame(width: 128, height: 192)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
                 
                 Text(book.title)
                     .font(.title2)
@@ -53,7 +51,7 @@ struct BookDetailsView: View {
                     .font(.body)
                 Spacer()
             }
-            .padding()
+            .padding([.horizontal, .bottom])
         }
     }
 }

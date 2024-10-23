@@ -33,7 +33,7 @@ class BooksManager {
         }
         let publishedDate = bookApiModelItem.volumeInfo?.publishedDate
         let description = bookApiModelItem.volumeInfo?.description
-        let imageURL = bookApiModelItem.volumeInfo?.imageLinks?.smallThumbnail
+        let imageURL = bookApiModelItem.volumeInfo?.imageLinks?.thumbnail
         return .init(id: id, title: title, authors: authors, imageUrl: imageURL, publishedDate: publishedDate, description: description)
     }
     
