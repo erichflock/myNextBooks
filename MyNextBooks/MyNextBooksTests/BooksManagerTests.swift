@@ -36,8 +36,8 @@ class BooksManagerTests: XCTestCase {
     func test_getBooks_whenExecuted_shouldReturnExpectedBooks() async {
         let expectedBooks: [Book] = [.fixture(id: "firstBookID", title: "Harry Potter", authors: "J.K Rowling", imageUrl: "harrypotter.com", publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers."),
                                      .fixture(id: "secondBookID", title: "The Lord of the Rings", authors: "J.R.R. Tolkien, Tolkien", imageUrl: "lordoftherings.com")]
-        booksApiSpy.bookApiModel = .fixture(items: [.fixture(id: "firstBookID", volumeInfo: .fixture(title: "Harry Potter", authors: ["J.K Rowling"], publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers.", imageLinks: .fixture(smallThumbnail: "harrypotter.com"))),
-                                                    .fixture(id: "secondBookID", volumeInfo: .fixture(title: "The Lord of the Rings", authors: ["J.R.R. Tolkien", "Tolkien"], imageLinks: .fixture(smallThumbnail: "lordoftherings.com")))])
+        booksApiSpy.bookApiModel = .fixture(items: [.fixture(id: "firstBookID", volumeInfo: .fixture(title: "Harry Potter", authors: ["J.K Rowling"], publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers.", imageLinks: .fixture(thumbnail: "harrypotter.com"))),
+                                                    .fixture(id: "secondBookID", volumeInfo: .fixture(title: "The Lord of the Rings", authors: ["J.R.R. Tolkien", "Tolkien"], imageLinks: .fixture(thumbnail: "lordoftherings.com")))])
         
         let returnedBooks = await sut.getBooks(with: "any terms")
         
