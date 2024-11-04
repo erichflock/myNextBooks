@@ -11,6 +11,7 @@ struct BookDetailsView: View {
     
     let book: Book
     @ObservedObject var readingManager = ReadingListManager.shared
+    @State private var isExpanded = false
     
     var body: some View {
         ScrollView {
@@ -47,8 +48,16 @@ struct BookDetailsView: View {
                     }
                     .accessibilityIdentifier("bookDetails_heartButton")
                 }
-                Text(book.description ?? "")
-                    .font(.body)
+                if let description = book.description {
+                    CollapsibleTextView(
+                        text: description,
+                        lineLimit: 5,
+                        isExpanded: isExpanded
+                    )
+                    .onTapGesture {
+                        isExpanded.toggle()
+                    }
+                }
                 Spacer()
             }
             .padding([.horizontal, .bottom])
@@ -58,6 +67,13 @@ struct BookDetailsView: View {
 
 struct BookDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailsView(book: .init(id: "id", title: "", authors: ""))
+        BookDetailsView(
+            book: .init(
+                id: "id",
+                title: "Sapiens",
+                authors: "Yuval Noah Harari",
+                description: "Der Millionenseller jetzt aktualisiert und mit neuem Nachwort. Vor 100.000 Jahren lebte Homo Sapiens als unbedeutende Spezies in einem abgelegenen Winkel des afrikanischen Kontinents. Heute ist der Mensch Herr und Schrecken des Planeten. Wie konnte es dazu kommen? In seiner fulminanten Reise von den Menschenaffen bis zum Cyborg entwirft Yuval Noah Harari mit seinem international gefeierten Bestseller »Sapiens - Eine kurze Geschichte der Menschheit« das große Panorama unserer eigenen Geschichte – und stellt die Frage, wohin wir von hier aus gehen wollen. »Sapiens« ist einer der größten Sachbucherfolge aller Zeiten und hat allein in Deutschland, bisher unter dem Titel »Eine kurze Geschichte der Menschheit«, über 2 Millionen Exemplare verkauft. Dieser immense Erfolg ist kein Zufall: Das Buch hat von Grund auf verändert, welche Verantwortung wir als Menschen gegenüber unseren Mitgeschöpfen und dem Planeten empfinden – und wie wir handeln. Yuval Noah Harari schreibt präzise, klug – und vor allem so, dass man gar nicht aufhören will zu lesen. Dieses Buch lässt Hirne wachsen.« ZEIT WISSEN. Das Buch erschien erstmals 2013 unter dem Titel »Eine kurze Geschichte der Menschheit« bei DVA. Diese neue Ausgabe ist aktualisiert und um ein neues Nachwort ergänzt. Mit zahlreichen Abbildungen"
+            )
+        )
     }
 }
