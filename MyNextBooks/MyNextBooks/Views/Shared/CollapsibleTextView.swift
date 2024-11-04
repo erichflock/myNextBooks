@@ -20,8 +20,9 @@ struct CollapsibleTextView: View {
                     .animation(.default, value: isExpanded)
                     .font(.body)
                 Spacer()
-                Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
                     .foregroundStyle(.blue)
+                    .padding(.bottom, 2)
             }
         }
     }
