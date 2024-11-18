@@ -15,6 +15,9 @@ struct Book: Identifiable, Equatable, Codable {
     var publishedDate: String?
     var description: String?
     var pageCount: Int?
+    var language: String?
+    var publisher: String?
+    var price: String?
     
     func getSecureImageUrl() -> String? {
         guard let imageUrl = imageUrl,
