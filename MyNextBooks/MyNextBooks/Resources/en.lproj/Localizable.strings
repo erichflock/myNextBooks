@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   MyNextBooks
 
@@ -11,3 +11,4 @@
 "noBooksMessage" = "No books. \nPlease add books to your list.";
 "noInternetMessage" = "No internet.\nPlease check your internet connection.";
 "noSearchResultsMessage" = "No books found.\nPlease search again.";
+"pages" = "Pages";

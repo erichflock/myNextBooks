@@ -11,3 +11,4 @@
 "noBooksMessage" = "Nenhum livro. \nPor favor adicione livros à sua lista";
 "noInternetMessage" = "Sem internet.\nPor favor verifique sua conexao com a internet.";
 "noSearchResultsMessage" = "Nenhum livro encontrado.\nPor favor pesquise novamente.";
+"pages" = "Páginas";

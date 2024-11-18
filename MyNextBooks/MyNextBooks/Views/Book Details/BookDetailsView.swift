@@ -70,7 +70,7 @@ struct BookDetailsView: View {
                     if let pageCount = book.pageCount?.description {
                         additionalInformationView(
                             systemImageName: "ruler",
-                            text: pageCount
+                            text: "\(pageCount)\n\(NSLocalizedString("pages", comment: "Pages"))"
                         )
                     }
                     if let publishedDate = book.publishedDate {
