@@ -49,6 +49,7 @@ struct BookApiModel: Codable {
         
         var id: String?
         var volumeInfo: VolumeInfo?
+        var saleInfo: SaleInfo?
         
         struct VolumeInfo: Codable {
             var title: String?
@@ -58,10 +59,21 @@ struct BookApiModel: Codable {
             var description: String?
             var imageLinks: ImageLinks?
             var pageCount: Int?
+            var language: String?
+            var publisher: String?
             
             struct ImageLinks: Codable {
                 var smallThumbnail: String?
                 var thumbnail: String?
+            }
+        }
+        
+        struct SaleInfo: Codable {
+            var listPrice: ListPrice?
+            
+            struct ListPrice: Codable {
+                var amount: Double?
+                var currencyCode: String?
             }
         }
     }

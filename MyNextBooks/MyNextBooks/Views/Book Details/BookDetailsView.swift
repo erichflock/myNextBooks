@@ -32,9 +32,6 @@ struct BookDetailsView: View {
                         Text(book.authors)
                             .font(.title3)
                             .foregroundColor(.secondary)
-                        Text(book.getFormattedPublishedDate() ?? "")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
                     }
                     Spacer()
                     Button {
@@ -73,7 +70,7 @@ struct BookDetailsView: View {
                             text: "\(pageCount)\n\(NSLocalizedString("pages", comment: "Pages"))"
                         )
                     }
-                    if let publishedDate = book.publishedDate {
+                    if let publishedDate = book.getFormattedPublishedDate() {
                         additionalInformationView(
                             systemImageName: "calendar",
                             text: publishedDate
@@ -87,7 +84,7 @@ struct BookDetailsView: View {
                     }
                     if let price = book.price {
                         additionalInformationView(
-                            systemImageName: "dollarsign",
+                            systemImageName: "banknote",
                             text: price
                         )
                     }

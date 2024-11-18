@@ -5,6 +5,8 @@
 //  Created by Erich Flock on 26.09.22.
 //
 
+import Foundation
+
 class BooksManager {
     
     var booksApi: BooksApiProtocol = BooksApi()
@@ -34,7 +36,21 @@ class BooksManager {
         let publishedDate = bookApiModelItem.volumeInfo?.publishedDate
         let description = bookApiModelItem.volumeInfo?.description
         let imageURL = bookApiModelItem.volumeInfo?.imageLinks?.thumbnail
-        return .init(id: id, title: title, authors: authors, imageUrl: imageURL, publishedDate: publishedDate, description: description)
+        let pageCount = bookApiModelItem.volumeInfo?.pageCount
+        let language = bookApiModelItem.volumeInfo?.language?.uppercased()
+        let publisher = bookApiModelItem.volumeInfo?.publisher
+        let priceAmount = bookApiModelItem.saleInfo?.listPrice?.amount
+        let priceCurrencyCode = bookApiModelItem.saleInfo?.listPrice?.currencyCode
+        let price = getPriceString(priceAmount, currency: priceCurrencyCode)
+        return .init(id: id, title: title, authors: authors, imageUrl: imageURL, publishedDate: publishedDate, description: description, pageCount: pageCount, language: language, publisher: publisher, price: price)
     }
     
+    private func getPriceString(_ priceAmount: Double?, currency: String?) -> String? {
+        guard let priceAmount = priceAmount,
+              let currency = currency else {
+            return nil
+        }
+        
+        return priceAmount.formatted(.currency(code: currency).locale(.current))
+    }
 }
