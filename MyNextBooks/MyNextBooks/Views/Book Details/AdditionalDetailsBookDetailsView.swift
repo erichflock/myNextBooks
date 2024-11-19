@@ -36,7 +36,7 @@ struct AdditionalDetailsBookDetailsView: View {
                 .multilineTextAlignment(.center)
             Spacer()
         }
-        .frame(width: 70, height: 80)
+        .frame(width: 70)
     }
     
     struct AdditionalDetail: Identifiable {
