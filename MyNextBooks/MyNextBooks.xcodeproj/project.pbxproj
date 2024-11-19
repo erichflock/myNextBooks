@@ -33,6 +33,7 @@
 		36EB50BB28F43E6000D1B42E /* MyNextBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB50BA28F43E6000D1B42E /* MyNextBooksUITests.swift */; };
 		B85784BB2C80C2690035F6FD /* Image+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85784BA2C80C2690035F6FD /* Image+Format.swift */; };
 		B865601F2CD91C4B007A3933 /* CollapsibleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865601E2CD91C44007A3933 /* CollapsibleTextView.swift */; };
+		B8DF01492CECD0EC0057B4E9 /* AdditionalDetailsBookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF01482CECD0EC0057B4E9 /* AdditionalDetailsBookDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		B85784BA2C80C2690035F6FD /* Image+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Format.swift"; sourceTree = "<group>"; };
 		B865601E2CD91C44007A3933 /* CollapsibleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleTextView.swift; sourceTree = "<group>"; };
 		B8A1E41D2AD00AD900C7145B /* MyNextBooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyNextBooks.entitlements; sourceTree = "<group>"; };
+		B8DF01482CECD0EC0057B4E9 /* AdditionalDetailsBookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDetailsBookDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				36C61D9328EF323D00802511 /* BookDetailsView.swift */,
+				B8DF01482CECD0EC0057B4E9 /* AdditionalDetailsBookDetailsView.swift */,
 			);
 			path = "Book Details";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				36B607F029A9011200018DBE /* SearchBooksViewModel.swift in Sources */,
 				367396BA28D8C79B00405BB9 /* BookCell.swift in Sources */,
 				36A34A0228D238DD004E6EF5 /* MainView.swift in Sources */,
+				B8DF01492CECD0EC0057B4E9 /* AdditionalDetailsBookDetailsView.swift in Sources */,
 				367396B728D8C3CE00405BB9 /* SearchBooksView.swift in Sources */,
 				3683C41128DE061E0007CC6C /* BooksApi.swift in Sources */,
 				B865601F2CD91C4B007A3933 /* CollapsibleTextView.swift in Sources */,

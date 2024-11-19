@@ -46,7 +46,7 @@ struct BookDetailsView: View {
                         }
                         .accessibilityIdentifier("bookDetails_heartButton")
                     }
-
+                    
                     if let description = book.description {
                         CollapsibleTextView(
                             text: description,
@@ -60,61 +60,32 @@ struct BookDetailsView: View {
                 }
                 .padding(.horizontal)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .firstTextBaseline, spacing: 0) {
-                        if let publisher = book.publisher {
-                            additionalInformationView(
-                                systemImageName: "building.2",
-                                text: publisher
-                            )
-                        }
-                        if let pageCount = book.pageCount?.description {
-                            additionalInformationView(
-                                systemImageName: "ruler",
-                                text: "\(pageCount)\n\(NSLocalizedString("pages", comment: "Pages"))"
-                            )
-                        }
-                        if let publishedDate = book.getFormattedPublishedDate() {
-                            additionalInformationView(
-                                systemImageName: "calendar",
-                                text: publishedDate
-                            )
-                        }
-                        if let price = book.price {
-                            additionalInformationView(
-                                systemImageName: "banknote",
-                                text: price
-                            )
-                        }
-                        if let language = book.language {
-                            additionalInformationView(
-                                systemImageName: "globe",
-                                text: language
-                            )
-                        }
-                    }
-                    .padding(.horizontal)
-                }
-                .padding(.top, 24)
-                Spacer()
+                AdditionalDetailsBookDetailsView(additionalDetails: additionalDetails())
+                    .padding(.top, 24)
+                //Spacer()
             }
             .padding(.bottom)
         }
     }
     
-    private func additionalInformationView(systemImageName: String, text: String) -> some View {
-        VStack(spacing: 0) {
-            Image(systemName: systemImageName)
-                .font(.title2)
-            Spacer()
-            Text(text)
-                .font(.caption)
-                .foregroundColor(.secondary)
-                .lineLimit(2)
-                .multilineTextAlignment(.center)
-            Spacer()
+    private func additionalDetails() -> [AdditionalDetailsBookDetailsView.AdditionalDetail] {
+        var details: [AdditionalDetailsBookDetailsView.AdditionalDetail] = []
+        if let publisher = book.publisher {
+            details.append(.init(systemImageName: "building.2", title: publisher))
         }
-        .frame(width: 70)
+        if let pageCount = book.pageCount?.description {
+            details.append(.init(systemImageName: "ruler", title: "\(pageCount)\n\(NSLocalizedString("pages", comment: "Pages"))"))
+        }
+        if let publishedDate = book.getFormattedPublishedDate() {
+            details.append(.init(systemImageName: "calendar", title: publishedDate))
+        }
+        if let price = book.price {
+            details.append(.init(systemImageName: "banknote", title: price))
+        }
+        if let language = book.language {
+            details.append(.init(systemImageName: "globe", title: language))
+        }
+        return details
     }
 }
 
