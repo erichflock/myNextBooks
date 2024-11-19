@@ -52,6 +52,10 @@ extension Book {
         static let imageUrl = "imageUrl"
         static let publishedDate = "publishedDate"
         static let description = "description"
+        static let pageCount = "pageCount"
+        static let language = "language"
+        static let publisher = "publisher"
+        static let price = "price"
     }
     
     struct CKRecordType {

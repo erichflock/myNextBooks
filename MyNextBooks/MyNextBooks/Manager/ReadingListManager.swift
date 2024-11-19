@@ -59,6 +59,10 @@ class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
         bookRecord[Book.CKKeys.imageUrl] = book.imageUrl as? CKRecordValue
         bookRecord[Book.CKKeys.publishedDate] = book.publishedDate as? CKRecordValue
         bookRecord[Book.CKKeys.description] = book.description as? CKRecordValue
+        bookRecord[Book.CKKeys.pageCount] = book.pageCount as? CKRecordValue
+        bookRecord[Book.CKKeys.language] = book.language as? CKRecordValue
+        bookRecord[Book.CKKeys.publisher] = book.publisher as? CKRecordValue
+        bookRecord[Book.CKKeys.price] = book.price as? CKRecordValue
         
         ckcontainer.save(bookRecord) { record, error in
             if let error {
@@ -116,7 +120,11 @@ class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
                      authors: authors,
                      imageUrl: record[Book.CKKeys.imageUrl] as? String,
                      publishedDate: record[Book.CKKeys.publishedDate] as? String,
-                     description: record[Book.CKKeys.description] as? String
+                     description: record[Book.CKKeys.description] as? String,
+                     pageCount: record[Book.CKKeys.pageCount] as? Int,
+                     language: record[Book.CKKeys.language] as? String,
+                     publisher: record[Book.CKKeys.publisher] as? String,
+                     price: record[Book.CKKeys.price] as? String
         )
     }
     
