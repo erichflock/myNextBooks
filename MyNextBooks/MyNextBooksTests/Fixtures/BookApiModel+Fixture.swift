@@ -20,8 +20,9 @@ extension BookApiModel {
 extension BookApiModel.Item {
     
     static func fixture(id: String? = UUID().uuidString,
-                        volumeInfo: VolumeInfo?) -> Self {
-        .init(id: id, volumeInfo: volumeInfo)
+                        volumeInfo: VolumeInfo?,
+                        saleInfo: SaleInfo? = nil) -> Self {
+        .init(id: id, volumeInfo: volumeInfo, saleInfo: saleInfo)
     }
     
 }
@@ -33,8 +34,12 @@ extension BookApiModel.Item.VolumeInfo {
                         subtitle: String? = "subtitle",
                         publishedDate: String? = nil,
                         description: String? = nil,
-                        imageLinks: ImageLinks? = nil) -> Self {
-        .init(title: title, authors: authors, subtitle: subtitle, publishedDate: publishedDate, description: description, imageLinks: imageLinks)
+                        imageLinks: ImageLinks? = nil,
+                        pageCount: Int? = nil,
+                        language: String? = nil,
+                        publisher: String? = nil
+    ) -> Self {
+        .init(title: title, authors: authors, subtitle: subtitle, publishedDate: publishedDate, description: description, imageLinks: imageLinks, pageCount: pageCount, language: language, publisher: publisher)
     }
     
 }

@@ -27,14 +27,16 @@ struct Book: Identifiable, Equatable, Codable {
         return imageUrl.replacingOccurrences(of: "http", with: "https")
     }
     
-    func getFormattedPublishedDate() -> String? {
+    func getFormattedPublishedDate(locale: Locale = .current) -> String? {
         guard let publishedDate = publishedDate else { return nil }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = locale
         
         let desiredDateFormatter = DateFormatter()
         desiredDateFormatter.dateFormat = "MMM yyyy"
+        desiredDateFormatter.locale = locale
         
         guard let dateFromString = dateFormatter.date(from: publishedDate) else { return nil }
         return desiredDateFormatter.string(from: dateFromString)

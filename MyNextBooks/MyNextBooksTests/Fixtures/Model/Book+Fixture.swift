@@ -15,8 +15,23 @@ extension Book {
                         authors: String = "authors",
                         imageUrl: String? = "http://imageurl.com",
                         publishedDate: String? = nil,
-                        description: String? = nil) -> Self {
-        .init(id: id, title: title, authors: authors, imageUrl: imageUrl, publishedDate: publishedDate, description: description)
+                        description: String? = nil,
+                        pageCount: Int? = nil,
+                        language: String? = nil,
+                        publisher: String? = nil,
+                        price: String? = nil) -> Self {
+        .init(
+            id: id,
+            title: title,
+            authors: authors,
+            imageUrl: imageUrl,
+            publishedDate: publishedDate,
+            description: description,
+            pageCount: pageCount,
+            language: language,
+            publisher: publisher,
+            price: price
+        )
     }
     
 }

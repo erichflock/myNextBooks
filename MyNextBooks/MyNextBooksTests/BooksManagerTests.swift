@@ -27,19 +27,76 @@ class BooksManagerTests: XCTestCase {
         XCTAssertNil(booksApiSpy.terms, "precondition")
         XCTAssertEqual(booksApiSpy.getBooksCallCount, 0, "precondition")
         
-        await sut.getBooks(with: expectedTerms)
+        _ = await sut.getBooks(with: expectedTerms)
         
         XCTAssertEqual(booksApiSpy.getBooksCallCount, 1)
         XCTAssertEqual(booksApiSpy.terms, expectedTerms)
     }
     
     func test_getBooks_whenExecuted_shouldReturnExpectedBooks() async {
-        let expectedBooks: [Book] = [.fixture(id: "firstBookID", title: "Harry Potter", authors: "J.K Rowling", imageUrl: "harrypotter.com", publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers."),
-                                     .fixture(id: "secondBookID", title: "The Lord of the Rings", authors: "J.R.R. Tolkien, Tolkien", imageUrl: "lordoftherings.com")]
-        booksApiSpy.bookApiModel = .fixture(items: [.fixture(id: "firstBookID", volumeInfo: .fixture(title: "Harry Potter", authors: ["J.K Rowling"], publishedDate: "01-02-2000", description: "This is a book about a young boy that discovers super powers.", imageLinks: .fixture(thumbnail: "harrypotter.com"))),
-                                                    .fixture(id: "secondBookID", volumeInfo: .fixture(title: "The Lord of the Rings", authors: ["J.R.R. Tolkien", "Tolkien"], imageLinks: .fixture(thumbnail: "lordoftherings.com")))])
+        let expectedBooks: [Book] = [
+            .fixture(
+                id: "firstBookID",
+                title: "Harry Potter",
+                authors: "J.K Rowling",
+                imageUrl: "harrypotter.com",
+                publishedDate: "01-02-2000",
+                description: "This is a book about a young boy that discovers super powers.",
+                pageCount: 100,
+                language: "EN",
+                publisher: "Publisher",
+                price: "10,00 €"
+            ),
+            .fixture(
+                id: "secondBookID",
+                title: "The Lord of the Rings",
+                authors: "J.R.R. Tolkien, Tolkien",
+                imageUrl: "lordoftherings.com"
+            )
+        ]
+        booksApiSpy.bookApiModel = 
+            .fixture(
+                items: [
+                    .fixture(
+                        id: "firstBookID",
+                        volumeInfo: .fixture(
+                            title: "Harry Potter",
+                            authors: ["J.K Rowling"],
+                            publishedDate: "01-02-2000",
+                            description: "This is a book about a young boy that discovers super powers.",
+                            imageLinks: .fixture(
+                                thumbnail: "harrypotter.com"
+                            ),
+                            pageCount: 100,
+                            language: "EN",
+                            publisher: "Publisher"
+                        ),
+                        saleInfo: .init(
+                            listPrice: .init(
+                                amount: 10,
+                                currencyCode: "EUR"
+                            )
+                        )
+                    ),
+                    .fixture(
+                        id: "secondBookID",
+                        volumeInfo: .fixture(
+                            title: "The Lord of the Rings",
+                            authors: [
+                                "J.R.R. Tolkien",
+                                "Tolkien"
+                            ],
+                            imageLinks: .fixture(
+                                thumbnail: "lordoftherings.com"
+                            )
+                        )
+                    )
+                ]
+            )
         
-        let returnedBooks = await sut.getBooks(with: "any terms")
+        let returnedBooks = await sut.getBooks(
+            with: "any terms"
+        )
         
         XCTAssertEqual(returnedBooks.count, 2)
         XCTAssertEqual(returnedBooks.first?.id, expectedBooks.first?.id)
@@ -48,6 +105,10 @@ class BooksManagerTests: XCTestCase {
         XCTAssertEqual(returnedBooks.first?.publishedDate, expectedBooks.first?.publishedDate)
         XCTAssertEqual(returnedBooks.first?.description, expectedBooks.first?.description)
         XCTAssertEqual(returnedBooks.first?.imageUrl, expectedBooks.first?.imageUrl)
+        XCTAssertEqual(returnedBooks.first?.pageCount, expectedBooks.first?.pageCount)
+        XCTAssertEqual(returnedBooks.first?.language, expectedBooks.first?.language)
+        XCTAssertEqual(returnedBooks.first?.publisher, expectedBooks.first?.publisher)
+        XCTAssertEqual(returnedBooks.first?.price, expectedBooks.first?.price)
         XCTAssertEqual(returnedBooks.last?.id, expectedBooks.last?.id)
         XCTAssertEqual(returnedBooks.last?.title, expectedBooks.last?.title)
         XCTAssertEqual(returnedBooks.last?.authors, expectedBooks.last?.authors)
