@@ -84,7 +84,9 @@ class ReadingListManager: ObservableObject, ReadingListManagerProtocol {
             guard let self else { return }
             switch result {
             case .success(let success):
-                self.readingList = self.mapRecords(success.matchResults)
+                Task { @MainActor in
+                    self.readingList = self.mapRecords(success.matchResults)
+                }
             case .failure(_):
                 break
             }
