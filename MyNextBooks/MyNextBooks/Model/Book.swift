@@ -34,7 +34,7 @@ struct Book: Identifiable, Equatable, Codable {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         let desiredDateFormatter = DateFormatter()
-        desiredDateFormatter.dateFormat = "dd/MM/yyyy"
+        desiredDateFormatter.dateFormat = "MMM yyyy"
         
         guard let dateFromString = dateFormatter.date(from: publishedDate) else { return nil }
         return desiredDateFormatter.string(from: dateFromString)
