@@ -22,18 +22,18 @@ class BooksManagerTests: XCTestCase {
         sut = nil
     }
     
-    func test_getBooks_whenExecuted_shouldCallGetBooksOnApiWithTheSameTerms() async {
+    func test_getBooks_whenExecuted_shouldCallGetBooksOnApiWithTheSameTerms() async throws {
         let expectedTerms = "flowers"
         XCTAssertNil(booksApiSpy.terms, "precondition")
         XCTAssertEqual(booksApiSpy.getBooksCallCount, 0, "precondition")
         
-        _ = await sut.getBooks(with: expectedTerms)
+        _ = try await sut.getBooks(with: expectedTerms)
         
         XCTAssertEqual(booksApiSpy.getBooksCallCount, 1)
         XCTAssertEqual(booksApiSpy.terms, expectedTerms)
     }
     
-    func test_getBooks_whenExecuted_shouldReturnExpectedBooks() async {
+    func test_getBooks_whenExecuted_shouldReturnExpectedBooks() async throws {
         let expectedBooks: [Book] = [
             .fixture(
                 id: "firstBookID",
@@ -94,7 +94,7 @@ class BooksManagerTests: XCTestCase {
                 ]
             )
         
-        let returnedBooks = await sut.getBooks(
+        let returnedBooks = try await sut.getBooks(
             with: "any terms"
         )
         

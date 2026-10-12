@@ -62,7 +62,7 @@ private class BooksManagerFake: BooksManager {
     
     var books: [Book] = []
     
-    override func getBooks(with terms: String) async -> [Book] {
+    override func getBooks(with terms: String) async throws -> [Book] {
         return books
     }
     

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchBooksView: View {
     
-    @ObservedObject var viewModel = SearchBooksViewModel()
+    @StateObject var viewModel = SearchBooksViewModel()
     @StateObject var network = Network()
     
     var body: some View {
@@ -37,6 +37,15 @@ struct SearchBooksView: View {
                         Image(systemName: "icloud.slash")
                             .font(.system(size: 60))
                         Text(NSLocalizedString("noInternetMessage", comment: ""))
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .offset(y: -50)
+                } else if let errorMessage = viewModel.errorMessage {
+                    VStack(alignment: .center, spacing: 10) {
+                        Image(systemName: "exclamationmark.triangle")
+                            .font(.system(size: 60))
+                        Text(errorMessage)
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                     }

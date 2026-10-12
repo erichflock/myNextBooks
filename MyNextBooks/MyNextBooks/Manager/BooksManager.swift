@@ -11,18 +11,14 @@ class BooksManager {
     
     var booksApi: BooksApiProtocol = BooksApi()
     
-    func getBooks(with terms: String) async -> [Book] {
+    func getBooks(with terms: String) async throws -> [Book] {
         var books: [Book] = []
-        do {
-            let apibooks = try await booksApi.getBooks(with: terms)
-            apibooks?.items?.forEach({ item in
-                if let book = map(bookApiModelItem: item) {
-                    books.append(book)
-                }
-            })
-        } catch {
-            
-        }
+        let apibooks = try await booksApi.getBooks(with: terms)
+        apibooks?.items?.forEach({ item in
+            if let book = map(bookApiModelItem: item) {
+                books.append(book)
+            }
+        })
         return books
     }
     

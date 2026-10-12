@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(\.colorScheme) var colorScheme
+    @State private var selectedTab = 1
     
     init() {
         if CommandLine.arguments.contains("UITestMode") {
@@ -18,18 +19,19 @@ struct MainView: View {
     }
     
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             SearchBooksView()
                 .tabItem({
                     Label(NSLocalizedString("search", comment: ""), systemImage: "magnifyingglass.circle.fill")
                         .accessibilityIdentifier("tabBar_searchBooks")
                 })
-            
+                .tag(0)
             ReadingListView()
                 .tabItem({
                     Label(NSLocalizedString("readingList", comment: ""), systemImage: "books.vertical.circle.fill")
                         .accessibilityIdentifier("tabBar_readingList")
                 })
+                .tag(1)
         }
         .tint(colorScheme == .light ? .black : .white)
     }
