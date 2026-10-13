@@ -12,14 +12,17 @@ class SearchBooksViewModel: ObservableObject {
     @Published var searchText = ""
     @Published private(set) var books: [Book] = []
     @Published private(set) var errorMessage: String?
+    @Published private(set) var isSearching = false
     
     var booksManager = BooksManager()
     
     @MainActor //Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates.
     func searchBooks() async {
+        isSearching = true
+        errorMessage = nil
+        defer { isSearching = false }
         do {
             books = try await booksManager.getBooks(with: searchText)
-            errorMessage = nil
         } catch {
             books = []
             errorMessage = error.localizedDescription

@@ -41,6 +41,9 @@ struct SearchBooksView: View {
                             .multilineTextAlignment(.center)
                     }
                     .offset(y: -50)
+                } else if viewModel.isSearching {
+                    ProgressView()
+                        .offset(y: -50)
                 } else if let errorMessage = viewModel.errorMessage {
                     VStack(alignment: .center, spacing: 10) {
                         Image(systemName: "exclamationmark.triangle")

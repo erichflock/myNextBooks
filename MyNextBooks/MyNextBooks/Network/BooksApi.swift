@@ -25,39 +25,47 @@ enum BooksApiError: LocalizedError {
             return "The book search returned an unexpected response."
         case .decodingFailed(let underlying):
             return underlying.localizedDescription
-        case .requestFailed(_, let message):
+        case .requestFailed(let statusCode, let message):
+            if statusCode == 503 {
+                return "Book search is temporarily unavailable. Please try again."
+            }
             return message ?? "The book search failed."
         }
     }
 }
 
 class BooksApi: BooksApiProtocol {
-    private let googleBooksAPIKey = ""
+    private let googleBooksAPIKey = "X"
     private let baseURL = "https://www.googleapis.com/books/v1/volumes"
+    private let maxAttempts = 5
     
     func getBooks(with terms: String) async throws -> BookApiModel? {
         var lastError: Error?
-        for attempt in 0..<3 {
+        for attempt in 0..<maxAttempts {
             do {
                 return try await fetchBooks(with: terms)
-            } catch let error as BooksApiError {
+            } catch {
                 lastError = error
-                guard case .requestFailed(let statusCode, _) = error,
-                      statusCode == 429 || statusCode == 503,
-                      attempt < 2 else {
+                guard isRetryable(error), attempt < maxAttempts - 1 else {
                     throw error
                 }
-                try await Task.sleep(nanoseconds: UInt64(attempt + 1) * 400_000_000)
+                // Google Books often returns transient 503s; backoff helps recover.
+                let delayNanoseconds = UInt64(pow(2.0, Double(attempt))) * 1_000_000_000
+                try await Task.sleep(nanoseconds: delayNanoseconds)
             }
         }
         throw lastError ?? BooksApiError.requestFailed(statusCode: 503, message: nil)
     }
 
     private func fetchBooks(with terms: String) async throws -> BookApiModel {
-        let queryItems = [
+        var queryItems = [
             URLQueryItem(name: "q", value: terms),
-            URLQueryItem(name: "key", value: googleBooksAPIKey)
+            // Helps avoid flaky Google Books cache nodes that return 503.
+            URLQueryItem(name: "country", value: Locale.current.regionCode ?? "US")
         ]
+        if !googleBooksAPIKey.isEmpty {
+            queryItems.append(URLQueryItem(name: "key", value: googleBooksAPIKey))
+        }
         var urlComponents = URLComponents(string: baseURL)
         urlComponents?.queryItems = queryItems
 
@@ -82,7 +90,22 @@ class BooksApi: BooksApiProtocol {
             throw BooksApiError.decodingFailed(underlying: error)
         }
     }
-    
+
+    private func isRetryable(_ error: Error) -> Bool {
+        if let apiError = error as? BooksApiError,
+           case .requestFailed(let statusCode, _) = apiError {
+            return statusCode == 429 || statusCode == 503
+        }
+        if let urlError = error as? URLError {
+            switch urlError.code {
+            case .timedOut, .networkConnectionLost, .cannotConnectToHost, .dnsLookupFailed:
+                return true
+            default:
+                return false
+            }
+        }
+        return false
+    }
 }
 
 private struct GoogleBooksErrorBody: Decodable {
